@@ -1,0 +1,310 @@
+.projects{
+  margin-top: 10rem;
+  background-image: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 1) 0%,
+                  rgba(0, 0, 0, .7) 10%,
+                  rgba(0, 0, 0, .7) 90%,
+                  rgba(0, 0, 0, 1) 100%,
+  ), url("../img/solar.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  height: 100vh;
+  width: 100%;
+  &__box{
+    padding-top: 10rem;
+    padding-left: 10rem;
+    &__header{
+      position: relative;
+      color: rgba(255,255,255, .3);
+      font-family: "Fredericka the Great";
+      font-size: 8rem;
+      & span{
+        position: absolute;
+        bottom: -1rem;
+        transform: translateX( -100%);
+        color: #fff;
+        font-family: "Fredericka the Great";
+        font-size: 4rem;
+      }
+
+    }
+  }
+  &__content{
+    padding: 10rem 2rem;
+
+    display: flex;
+
+    &__list{
+      flex: 0 0 10%;
+      &-list{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        & >li{
+          font-size: 3rem;
+          color: #fff;
+          font-family: "Kaushan Script";
+        }
+      }
+    }
+    &__text{
+      flex: 0 0 40%;
+      padding: 2rem;
+
+
+
+    }
+    &__photos{
+      perspective: 1300px;
+      //transition: transform .3s;
+      //transform-origin: center;
+      transform: translateY(-100px);
+      flex: 0 0 50%;
+      width: 100%;
+      position: relative;
+      &__desktop{
+        pointer-events: none;
+        top: 10%;
+        left: 10%;
+        position: absolute;
+        width: 80%;
+        height: 60%;
+        z-index: 9;
+        transform: translateX(-200px);
+        transition: transform .5s cubic-bezier( .52,-0.44,.56,1.41);
+        &.active{
+          transform: translateX(0);
+          transition: transform .5s cubic-bezier( .52,-0.44,.56,1.41);
+          & img{
+
+            opacity: 100;
+            visibility: visible;
+            transition: all .5s cubic-bezier( .52,-0.44,.56,1.41);
+          }
+
+        }
+
+        & img{
+          pointer-events: none;
+          transition: all .5s cubic-bezier( .52,-0.44,.56,1.41);
+          opacity: 0;
+          visibility: hidden;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          box-shadow: 2px 5px 5px 2px rgba(128,190,255, .3);
+        }
+      }
+      &__mobile{
+        pointer-events: none;
+        top: 30%;
+        left: 50%;
+        position: absolute;
+        width: 30%;
+        height: 50%;
+        z-index: 10;
+        transform: translateX(200px);
+        transition: transform .5s cubic-bezier( .52,-0.44,.56,1.41);
+        &.active{
+          transform: translateX(0);
+          transition: transform .5s cubic-bezier( .52,-0.44,.56,1.41);
+          & img{
+            opacity: 100;
+            visibility: visible;
+            transition: all .5s cubic-bezier( .52,-0.44,.56,1.41);
+          }
+        }
+
+        & img{
+          pointer-events: none;
+          transition: all .5s cubic-bezier( .52,-0.44,.56,1.41);
+          opacity: 0;
+          visibility: hidden;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          box-shadow: 2px 5px 5px 2px rgba(128,190,255, .3);
+        }
+
+      }
+    }
+  }
+}
+.project__name{
+  font-size: 4rem;
+  font-family: "Kaushan Script";
+  color: #fff;
+  padding-bottom: 4rem;
+}
+.project__details{
+  font-size: 1.8rem;
+  font-family: Constantia;
+  color: #fff;
+  padding-bottom: 4rem;
+}
+.project__link-page{
+  width: 25rem;
+  //text-align: center;
+  position: relative;
+  display: inline-block;
+  border: 1px solid lightgray;
+  font-size: 1.8rem;
+  font-family: "Fredericka the Great";
+  color: #fff;
+
+  padding: 2rem 4rem;
+
+  &:hover{
+    & > .top__left{
+      transform: translate(-.5rem,-.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .top__right{
+      transform: translate(.5rem,-.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .bottom__left{
+      transform: translate(-.5rem,.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .bottom__right{
+      transform: translate(.5rem,.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .content__link{
+      & > .spanOne{
+        transform: translate(0);
+        transition: all 1s;
+
+      }
+      & > .spanTwo{
+        transform: translateY(105%);
+        transition: all .5s;
+      }
+    }
+
+  }
+
+}
+.project__link-git{
+  width: 25rem;
+  position: relative;
+  display: inline-block;
+  border: 1px solid lightgray;
+  font-size: 1.8rem;
+  font-family: "Fredericka the Great";
+  color: #fff;
+  padding: 2rem 4rem;
+  margin-left: 2rem;
+
+  &:hover{
+    & > .top__left{
+      transform: translate(-.5rem,-.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .top__right{
+      transform: translate(.5rem,-.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .bottom__left{
+      transform: translate(-.5rem,.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .bottom__right{
+      transform: translate(.5rem,.5rem)  rotate(1080deg);
+      transition: transform 2s;
+    }
+    & > .content__link{
+      & > .spanOne{
+        transform: translate(0);
+        transition: all 1s;
+
+      }
+      & > .spanTwo{
+        transform: translateY(105%);
+        transition: all .5s;
+      }
+    }
+  }
+
+}
+.corners{
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #000;
+  border: 1px solid lightgray;
+
+}
+.top__left{
+  top:0;
+  left: 0;
+  transform: translate(-.5rem,-.5rem)  rotate(45deg);
+  transition: transform 2s;
+}
+.top__right{
+  top:0;
+  right:0;
+  transform: translate( .5rem,-.5rem)  rotate(45deg);
+  transition: transform 2s;
+}
+.bottom__left{
+  bottom:0;
+  left:0;
+  transform: translate( -.5rem,.5rem) rotate(45deg);
+  transition: transform 2s;
+}
+.bottom__right{
+  bottom:0;
+  right:0;
+  transform: translate( .5rem,.5rem) rotate(45deg);
+  transition: transform 2s;
+}
+.content__link{
+  height: 100%;
+  width: 100%;
+  top:0;
+  left: 0;
+  position: absolute;
+  font-size: 1.8rem;
+  font-family: "Fredericka the Great";
+  color: #fff;
+  padding: 2rem 4rem;
+  overflow: hidden;
+  & > .spanOne{
+    top:0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    font-size: 1.8rem;
+    font-family: "Fredericka the Great";
+    color: #070707;
+    padding: 2rem 4rem;
+    background-color: rgba(80, 65, 6, 0.6);
+    transform: translateX(-101%);
+    transition: transform .5s;
+    text-align: center;
+  }
+  &> .spanTwo{
+    top:0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    font-size: 1.8rem;
+    font-family: "Fredericka the Great";
+    color: #fafafa;
+    padding: 2rem 4rem;
+    transform: translateY(0);
+    transition: transform .5s;
+    transition-delay: .2s;
+    text-align: center;
+
+  }
+}
+.hidden{
+  visibility: hidden;
+}

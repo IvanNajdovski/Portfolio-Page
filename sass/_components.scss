@@ -1,0 +1,35 @@
+.empty{
+  width: 5rem;
+  height: 1rem;
+}
+.circle-big{
+  fill:#fff;
+}
+.cursor-box{
+  pointer-events: none;
+}
+//.background-fixed{
+//  position: fixed;
+//  top:0;
+//  left:0;
+//  width: 100%;
+//  height: 100vh;
+//  background-image: linear-gradient(
+//                  to bottom,
+//                  rgba(0, 0, 0, 1) 0%,
+//                  rgba(0, 0, 0, .7) 10%,
+//                  rgba(0, 0, 0, .7) 90%,
+//                  rgba(0, 0, 0, 1) 100%
+//  ), url("../img/solar.jpg");
+//}
+.line{
+  width: 1px;
+  height: 0;
+  background-color: lightgray;
+  transition: height .5s;
+  &.active{
+    width: 1px;
+    height: 10rem;
+    transition: height .5s;
+  }
+}

@@ -1,0 +1,44 @@
+@keyframes  border {
+  0% {
+    stroke-dashoffset: 300;
+  }
+   100% {
+    stroke-dashoffset: 0;
+  }
+
+}
+
+.loading{
+  height: 8rem;
+  width: 8rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3rem;
+  right: 5rem;
+  transform: matrix(1,0,0,1,5,5);
+  & p{
+    font-family: Arial;
+    color: #ffc36d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: .5rem;
+
+  }
+  &-circle{
+    position: absolute;
+    overflow: visible;
+    top:0;
+    left:0;
+    background-color: transparent;
+  }
+}
+.circle-fill{
+  stroke-dasharray: 300, 300;
+  stroke-dashoffset: 300;
+  &.active{
+    animation: border 2s linear;
+  }
+}

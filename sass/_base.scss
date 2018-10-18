@@ -1,0 +1,96 @@
+
+$bp-large: 75em;                //1200px
+$bp-large-medium: 62.5em;       //1000px
+$bp-large-small: 50em;          //800px
+$bp-medium: 37.5em;             //600px
+$bp-medium-small: 31.25em;      //500px
+$bp-small: 25em;                //400px
+$bp-smallest: 18.75em;          //300px
+
+$color-primary: #dadada;
+
+*,
+*:after,
+*:before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  cursor: inherit;
+
+
+}
+html{
+  box-sizing: border-box;
+  font-size: 62.4%;
+  cursor: none;
+}
+body{
+  //overflow: hidden;
+  background-color: #000;
+  cursor: none;
+}
+.pic {
+  display: none;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left:0;
+}
+.blur {
+  height: 100%;
+
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+}
+
+.cursor{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(15px 15px);
+  z-index: 5500;
+  transition: top .15s, left .15s;
+  overflow: hidden;
+  mix-blend-mode: difference;
+  vertical-align: baseline;
+  pointer-events: none;
+  &.expand{
+    width:100px;
+    height: 100px;
+    transform: translate(-3.5rem , -3.5rem);
+    transition: height .4s cubic-bezier( .52,-0.44,.56,1.41), width .4s cubic-bezier( .52,-0.44,.56,1.41), transform .4s linear;
+
+
+
+  }
+}
+.cursor-small{
+  pointer-events: none;
+  position: absolute;
+
+  top:0;
+  left:0;
+
+
+  mix-blend-mode: difference;
+  z-index: 5551;
+  &.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s
+  }
+}
+.circle{
+  fill: #fff;
+
+}

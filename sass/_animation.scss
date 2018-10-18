@@ -1,0 +1,239 @@
+$strokeColor: #9E9E9E;
+$logoColor: $color-primary;
+$size: 140px;
+$totalAnim: 9s;
+$delay: 1s;
+$svgSize: 70;
+$squareLen: $svgSize * 4;
+$lineLen: $svgSize;
+$linesPerSide: 6;
+$strokeLen: 600;
+$fillLen: 290;
+
+.logo {
+
+  z-index: 10000;
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translateY(-50%) scale(.8);
+  margin-left: $size/-2;
+  margin-top: $size/-2;
+  width: $size;
+  height: $size;
+  overflow: visible;
+  &.active{
+    top: 10rem;
+    left: 5rem;
+    transform: translateY(-50%) scale(.1);
+    transition: all 1s;
+  }
+
+
+  &__mainGroup {
+    transform-origin: 35px 35px;
+
+
+  }
+  &__colorGroupTwo{
+    transform: translateY(230px);
+
+  }
+  &__colorGroup{
+    &.active {
+      animation: move 2s linear infinite;
+    }
+
+  }
+  &__grayGroup {
+    animation: grayGroupAnim $totalAnim 3s infinite;
+    //animation-iteration-count: 1;
+    animation-delay: 4s;
+
+  }
+  &__grayGroupTwo {
+    transform: translateY(100px);
+    animation: grayGroupAnim $totalAnim $delay ;
+    animation-iteration-count: 1;
+    animation-delay: 4s;
+
+  }
+
+
+  &__square {
+    stroke: $strokeColor;
+    stroke-dasharray: $squareLen, $squareLen;
+    stroke-dashoffset: $squareLen;
+    animation: square-anim $totalAnim $delay ;
+    animation-iteration-count: 1;
+    animation-delay: 4s;
+
+  }
+  &__squareTwo {
+    stroke: $strokeColor;
+    stroke-dasharray: 620, 620;
+    stroke-dashoffset: 620;
+    animation: square-anim $totalAnim $delay ;
+    animation-iteration-count: 1;
+    animation-delay: 4s;
+
+  }
+
+
+
+  &__stroke {
+    stroke: $logoColor;
+    stroke-dasharray: $strokeLen, $strokeLen;
+    stroke-dashoffset: $strokeLen;
+    animation: strokeAnim $totalAnim $delay ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 4s;
+
+  }
+  &__strokeTwo {
+    stroke: $logoColor;
+    stroke-dasharray: 1050, 1050;
+    stroke-dashoffset: 1050;
+    animation: strokeAnimTwo $totalAnim $delay ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 4s;
+
+  }
+
+  &__fill {
+    z-index: 100000;
+    stroke: $logoColor;
+    stroke-dasharray: $fillLen, $fillLen;
+    stroke-dashoffset: $fillLen;
+    animation: fillAnim $totalAnim $delay ;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+
+
+  }
+  &__fillTwo {
+    z-index: 100000;
+    stroke: $logoColor;
+    stroke-dasharray: 650, 650;
+    stroke-dashoffset: 650;
+    animation: fillAnimTwo 9s $delay ;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+
+  }
+}
+
+@keyframes square-anim {
+  12% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes mainGroupAnim {
+  26% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-45deg);
+  }
+  95% {
+    transform: rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes grayGroupAnim {
+  33% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes strokeAnim {
+  33% {
+    stroke-dashoffset: $strokeLen;
+  }
+  66% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes strokeAnimTwo {
+  33% {
+    stroke-dashoffset: 1050;
+  }
+  66% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillAnim {
+  66% {
+    stroke-dashoffset: $fillLen;
+  }
+  85% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fillAnimTwo {
+  66% {
+    stroke-dashoffset: 650;
+  }
+  85% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes move {
+  0%{
+    transform: translateX(0);
+
+  }
+  25%{
+    transform: translateX(-2rem);
+
+  }
+  75%{
+    transform: translateX(2rem);
+
+  }
+  100%{
+    transform: translateX(0rem);
+
+  }
+  }
+
+
+
+

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ivan Najdovski</title>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg class="logo " xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70 70"
+     version="1.1">
+    <g class="logo__mainGroup">
+        <g class="logo__grayGroup">
+            <path class="logo__square" fill="none" stroke-width="1" d="M0,0 0,70 70,70 70,0z"/>
+        </g>
+        <g class="logo__grayGroupTwo">
+            <path class="logo__squareTwo" fill="none" stroke-width="1" d="M0,0 0,200 70,200 70,0z"/>
+        </g>
+        <g class="logo__colorGroup">
+            <path class="logo__stroke" fill="none" stroke-width="1"
+                  d="M0,70 0,0 0,0 70,0 70,70 70,70 10,70 10,60 10,60 60,60 60,10 10,10 10,60 10,60 10,70 10,70 0,70 0,70"/>
+            <path class="logo__fill" fill="none" stroke-width="10"
+                  d="M5 ,70 5,5 0,5 0,5 65 ,5 65, 65 65, 65 65, 65 5, 65 5"/>
+        </g>
+        <g class="logo__colorGroupTwo">
+            <path class="logo__strokeTwo" fill="none" stroke-width="1"
+                  d="M0,70 0,0 0,-130 70,-130 70,70 70,70 10,70 10,60 10,60 60,60 60,-120 10,-120 10,60 10,60 10,70 10,70 0,70 0,70"/>
+            <path class="logo__fillTwo" fill="none" stroke-width="10"
+                  d="M5 ,70 5,-125 0,-125 0,-125 65 ,-125 65, 65 65, 65 65, 65 5, 65 5"/>
+        </g>
+    </g>
+</svg>
+<div class="pic">
+    <svg class="blur" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%">
+        <image class="imgOne" filter="url(#filter2)" xlink:href="img/Background1.jpg" width="100%" height="100%"></image>
+        <filter id="filter2">
+            <feGaussianBlur stdDeviation="10" />
+        </filter>
+        <mask id="mask1">
+            <circle class="curcle" cx="100" cy="100" r="75" stroke="black" stroke-width="7" fill="white" filter="url(#filter2)" />
+        </mask>
+        <image class="imgTwo" xlink:href="img/Background1.jpg" width="100%" height="100%" mask="url(#mask1)"></image>
+    </svg>
+</div>
+<!--<div class="cursor"></div>-->
+<!--<div class="cursor-small">-->
+    <!--<svg height="10" width="10"> <circle class="circle" cx="5" cy="5" r="5" stroke-width="0" ></circle> </svg>-->
+<!--</div>-->
+<div class="loading">
+    <p class="loading-text">Hold Down</p>
+    <svg class="loading-circle" height="80" width="80">
+        <circle class="circle-fill" cx="40" cy="40" r="40" stroke="#ffc36d" fill="rgba(0,0,0,.5)" stroke-width="4" />
+    </svg>
+
+</div>
+<div class="nav">
+    <div class="nav__box">
+        <div class="nav__box-content">
+            <ul class="nav__box-content-list">
+                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-linkedin"></i></a></li>
+                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-github"></i></i></a></li>
+
+
+            </ul>
+        </div>
+        <div class="nav__box__menu">
+            <div class="nav__box__menu__button"></div>
+        </div>
+    </div>
+</div>
+<div class="cursor-box">
+    <div class="cursor active">
+        <!--<svg >-->
+        <!--<circle class="circle-big"  cx="20" cy="20" r="15"  stroke-width="0"  style="fill: rgb(255,255,255)">-->
+
+        <!--</circle>-->
+        <!--</svg>-->
+    </div>
+    <div class="cursor-small active">
+        <svg height="10" width="10">
+            <circle class="circle" cx="5" cy="5" r="5" stroke-width="0" >
+
+            </circle>
+        </svg>
+    </div>
+</div>
+<section class="top">
+    <div class="top__navbar">
+        <ul class="top__navbar__list">
+            <li class="top__navbar__list__item">Home </li>
+            <li class="top__navbar__list__item">About Me</li>
+            <li class="top__navbar__list__item">Project</li>
+            <li class="top__navbar__list__item">Contact</li>
+        </ul>
+    </div>
+
+    <div class="top__box">
+        <div class="top__box-header"><div>W</div><div>e</div><div>l</div><div>l</div><div>c</div><div>o</div><div>m</div><div>e</div></div>
+        <div class="top__box-header"><div>T</div><div>o</div> <div class="empty">&nbsp;</div> <div>M</div><div>y</div></div>
+        <div class="top__box-header"><div>P</div><div>a</div><div>g</div><div>e</div></div>
+    </div>
+    <div class="boxpanel"></div>
+    <div class="boxpanel"></div>
+    <div class="boxpanel"></div>
+    <div class="boxpanel"></div>
+    <div class="boxpanel"></div>
+    <div class="boxpanelPrime "></div>
+</section>
+<div class="background-fixed"></div>
+<div class="projects">
+    <div class="projects__box">
+        <h1 class="projects__box__header">My Projects <span>My Projects</span></h1>
+    </div>
+    <div class="projects__content">
+        <div class="projects__content__list">
+            <ul class="projects__content__list-list">
+                <li class="list__number">01</li>
+                <li class="line "></li>
+                <li class="list__number">02</li>
+                <li class="line "></li>
+                <li class="list__number">03</li>
+                <li class="line "></li>
+                <li class="list__number">04</li>
+                <li class="line "></li>
+                <li class="list__number">05</li>
+
+            </ul>
+        </div>
+        <div class="projects__content__title">
+            <h1 class="project__name">Weather Forecast</h1>
+            <p class="project__details">Page is using three API to collect Weather, Geolocation and Photos data and is giving the user information for the weather of the given location. The application is using Axios NodeJs library to call the API's and EJS for template rendering. Also favorite location is best done with database but for investigating the localStorage sistem we used localStorage instead. </p>
+
+            <div class="project__link-page">
+                <div class="content__link"><span class="spanOne">Open Webpage</span><span class="spanTwo">Open Webpage</span></div>
+                <p class="hidden">Open Webpage</p>
+                <div class="top__left corners"></div>
+                <div class="top__right corners"></div>
+                <div class="bottom__left corners"></div>
+                <div class="bottom__right corners"></div>
+            </div>
+            <div class="project__link-git">
+                <div class="content__link"><span class="spanOne">View Source Code</span><span class="spanTwo">View Source Code</span></div>
+                <p class="hidden">View Source Code</p>
+                <div class="top__left corners"></div>
+                <div class="top__right corners"></div>
+                <div class="bottom__left corners"></div>
+                <div class="bottom__right corners"></div></div>
+        </div>
+        <div class="projects__content__photos">
+            <div class="projects__content__photos__desktop active">
+                <img src="img/project__1/desktop.jpg" alt="">
+            </div>
+            <div class="projects__content__photos__mobile active">
+                <img class="mobile-img" src="img/project__1/mobile.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
