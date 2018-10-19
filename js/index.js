@@ -115,7 +115,8 @@ $(document).ready(function () {
     $(document).on("mouseup", function () {
         if (radius > 300) {
             $(".nav").show();
-            $("body").css("overflow","visible")
+
+
             clearInterval(interval)
             $(".loading").css("display", "none");
             $(".cursor-small").css("display", "block");
@@ -142,6 +143,8 @@ $(document).ready(function () {
                 $(".pic").css("display","none");
                 $(".top").addClass("active");
                 $(".nav").addClass("active");
+                $("html, body").animate({ scrollTop: 0 });
+                $("body").css("overflow","visible");
             },500);
 
         } else {
