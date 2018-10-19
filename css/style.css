@@ -664,7 +664,7 @@ body {
   position: relative;
   display: inline-block;
   border: 1px solid lightgray;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-family: "Fredericka the Great";
   color: #fff;
   padding: 2rem 4rem; }
@@ -899,7 +899,7 @@ body {
     top: 0;
     left: 0;
     background-color: #000000;
-    clip-path: polygon(16% 0%, 36% 100%, 0% 100%, 0% 0%); }
+    clip-path: polygon(20% 0%, 40% 100%, 0% 100%, 0% 0%); }
     .form__animation__left.active {
       transition: transform .7s ease-in; }
   .form__animation__right {
@@ -909,7 +909,7 @@ body {
     top: 0;
     left: 0;
     background-color: #000000;
-    clip-path: polygon(100% 0%, 100% 100%, 44% 100%, 24% 0%); }
+    clip-path: polygon(100% 0%, 100% 100%, 40% 100%, 20% 0%); }
     .form__animation__right.active {
       transition: transform .7s ease-in; }
   .form__animation__cover {

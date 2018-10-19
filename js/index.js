@@ -143,8 +143,7 @@ $(document).ready(function () {
                 $(".pic").css("display","none");
                 $(".top").addClass("active");
                 $(".nav").addClass("active");
-                $("html, body").animate({ scrollTop: 0 });
-                $("body").css("overflow","visible");
+
             },500);
 
         } else {
@@ -157,6 +156,17 @@ $(document).ready(function () {
         }
 
     });
+    $(document).one("mouseup",function(){
+        if(radius>300){
+            setTimeout(function () {
+                clearInterval(interval);
+                $("html, body").animate({ scrollTop: 0 });
+                $("body").css("overflow","visible");
+
+            },500);
+
+        }
+    })
     $(".nav__box-content-list, .top__navbar__list__item").on("mouseover", function () {
         $(".cursor").addClass("expand")
         $(".cursor-small").addClass("hidden")

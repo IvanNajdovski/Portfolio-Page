@@ -145,7 +145,7 @@
     top: 0;
     left: 0;
     background-color: #000000;
-    clip-path: polygon(16% 0%, 36% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(20% 0%, 40% 100%, 0% 100%, 0% 0%);
     &.active {
 
       transition: transform .7s ease-in;
@@ -158,7 +158,7 @@
     top: 0;
     left: 0;
     background-color: #000000;
-    clip-path: polygon(100% 0%, 100% 100%, 44% 100%, 24% 0%);
+    clip-path: polygon(100% 0%, 100% 100%, 40% 100%, 20% 0%);
     &.active {
 
       transition: transform .7s ease-in;
