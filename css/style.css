@@ -274,6 +274,11 @@ body {
     height: 10rem;
     transition: height .5s; }
 
+.wrapper-center {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%; }
+
 .nav {
   position: fixed;
   top: 0;
@@ -450,6 +455,83 @@ body {
     transition: transform .15s ease-in;
     transition-delay: .9s; }
 
+@keyframes stripes {
+  to {
+    background-size: 100% 100%; } }
+
+.about {
+  margin-top: 10rem;
+  padding-bottom: 20rem;
+  background-image: url("../img/logo_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  width: 100%; }
+  .about__content {
+    margin-bottom: 10rem; }
+    .about__content__top {
+      padding: 8rem; }
+      .about__content__top__header {
+        font-family: "Lato";
+        text-align: center;
+        font-size: 1.8rem;
+        color: rgba(184, 184, 184, 0.72);
+        line-height: 4rem;
+        letter-spacing: .2rem; }
+    .about__content__bottom {
+      padding: 4rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly; }
+
+.skill__img {
+  position: relative;
+  width: 170px;
+  height: 200px;
+  flex: 0 0 10%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .skill__img > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(80%) brightness(150%);
+    transition: all 0.5s cubic-bezier(0.52, -0.44, 0.56, 1.41); }
+    .skill__img > img.active {
+      filter: grayscale(10%) brightness(150%);
+      transform: translateY(-170px);
+      transition: all 0.3s cubic-bezier(0.52, -0.44, 0.56, 1.41); }
+
+.div__box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.52, -0.44, 0, 1.41); }
+
+.under {
+  text-align: center;
+  color: #fff;
+  font-size: 4rem;
+  font-family: "Fredericka the Great";
+  filter: grayscale(70%) brightness(150%);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: translateY(170px);
+  opacity: 0;
+  visibility: hidden; }
+  .under.active {
+    visibility: visible;
+    opacity: 100;
+    transform: translateY(21px);
+    transition: all 0.5s cubic-bezier(0.52, -0.44, 0, 1.41);
+    transition-delay: .2s; }
+
 .projects {
   margin-top: 10rem;
   background-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.7) 90%, black 100%), url("../img/solar.jpg");
@@ -492,11 +574,19 @@ body {
       flex: 0 0 40%;
       padding: 2rem; }
     .projects__content__photos {
+      height: 400px;
       perspective: 1300px;
+      transform-origin: 50% 50%;
       transform: translateY(-100px);
       flex: 0 0 50%;
       width: 100%;
       position: relative; }
+      .projects__content__photos-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1600;
+        transform-origin: 75% 75%; }
       .projects__content__photos__desktop {
         pointer-events: none;
         top: 10%;
@@ -522,7 +612,7 @@ body {
           width: 100%;
           height: auto;
           object-fit: cover;
-          box-shadow: 2px 5px 5px 2px rgba(128, 190, 255, 0.3); }
+          box-shadow: 2px 5px 100px 2px rgba(128, 190, 255, 0.3); }
       .projects__content__photos__mobile {
         pointer-events: none;
         top: 30%;
@@ -548,18 +638,18 @@ body {
           width: 100%;
           height: auto;
           object-fit: cover;
-          box-shadow: 2px 5px 5px 2px rgba(128, 190, 255, 0.3); }
+          box-shadow: 2px 5px 100px 2px rgba(128, 190, 255, 0.3); }
 
 .project__name {
   font-size: 4rem;
   font-family: "Kaushan Script";
-  color: #fff;
+  color: #80beff;
   padding-bottom: 4rem; }
 
 .project__details {
   font-size: 1.8rem;
-  font-family: Constantia;
-  color: #fff;
+  font-family: "Lato";
+  color: rgba(174, 174, 174, 0.79);
   padding-bottom: 4rem; }
 
 .project__link-page {
@@ -690,3 +780,67 @@ body {
 
 .hidden {
   visibility: hidden; }
+
+.form__box {
+  height: 100%; }
+  .form__box__form {
+    padding: 20rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .form__box__form label {
+      font-size: 2rem;
+      font-family: "Fredericka the Great";
+      color: #80beff;
+      transform: translateY(3rem); }
+    .form__box__form input {
+      width: 50%;
+      padding: 1rem 4rem;
+      border: none;
+      border-bottom: 1px solid lightgray;
+      background-color: transparent; }
+    .form__box__form textarea {
+      width: 50%;
+      padding: 1rem 3rem;
+      border: none;
+      border-bottom: 1px solid lightgray;
+      background-color: transparent; }
+    .form__box__form .input__submit-label {
+      font-size: 6rem;
+      margin-left: auto;
+      margin-right: 16rem;
+      color: rgba(255, 255, 255, 0.61);
+      position: relative; }
+      .form__box__form .input__submit-label:before {
+        position: absolute;
+        transform: translate(0, 4rem);
+        content: "";
+        display: block;
+        height: .7rem;
+        width: 100%;
+        background-color: red;
+        z-index: -1; }
+      .form__box__form .input__submit-label .input__span {
+        z-index: 10;
+        position: absolute;
+        font-size: 3rem;
+        font-family: "Lato";
+        color: #80beff;
+        transform: translate(8rem, -3rem); }
+
+.input__text {
+  margin-left: 4rem; }
+
+.input__email {
+  margin-left: 8rem; }
+
+.input__phone {
+  margin-left: 12rem; }
+
+.input__textarea {
+  margin-left: 16rem; }
+
+#submit {
+  width: 0;
+  visibility: hidden;
+  opacity: 0; }
