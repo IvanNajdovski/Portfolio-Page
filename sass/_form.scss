@@ -1,27 +1,34 @@
-.form{
+.form {
   overflow: hidden;
   width: 100%;
   position: relative;
 
-  &__box{
+  &__box {
     height: 100%;
-    overflow: hidden;
-    &__form{
+
+    &__form {
       padding: 20rem 0;
       display: flex;
       flex-direction: column;
 
       justify-content: center;
-      & label{
+      &__label {
+        transform: translate(-800px, -3rem);
+        visibility: hidden;
+        opacity: 0;
+        &.active {
+          visibility: visible;
+          opacity: 100;
+          transform: translate(0, -3rem);
+          transition: all .5s cubic-bezier(.52, -0.44, .56, 1.41);
+          transition-delay: 1s;
+        }
         font-size: 2rem;
         font-family: "Fredericka the Great";
         color: $color-blue;
-        transform: translateY(-3rem);
-        & :last-child{
 
-        }
       }
-      & input{
+      & input {
         width: 50%;
         padding: 1rem 4rem 0 4rem;
         border: none;
@@ -31,21 +38,33 @@
         color: #fff;
         font-family: "Lato";
         font-size: 1.8rem;
+        transform: translate(-800px);
 
-        &::placeholder{
-          opacity: 0;
-        }
-        &:focus + label{
-          transform: translate(-12rem, -3rem) !important;
+        opacity: 0;
+        &.active {
 
-          transition: all 1s;
+          opacity: 100;
+          transform: translate(0);
+          transition: all 1.5s cubic-bezier(.52, -0.44, .56, 1.41);
+          &::placeholder {
+            opacity: 0;
+          }
+          &:focus + label {
+            transform: translate(-12rem, -3rem) !important;
+
+            transition: all .5s;
+            transition-delay: 0s !important;
+          }
+          &:not(:placeholder-shown) + label {
+            transform: translate(-12rem, -3rem);
+            transition: all .5s cubic-bezier(.52, -0.44, .56, 1.41);
+            transition-delay: 0s !important;
+          }
+
         }
-        &:not(:placeholder-shown) + label{
-          transform: translate(-12rem, -3rem);
-          transition: all 1s;
+
       }
-      }
-      & textarea{
+      & .textarea {
         margin-left: 18rem;
         width: 50%;
         padding: 1rem 4rem 0 4rem;
@@ -58,21 +77,29 @@
         font-family: "Lato";
         font-size: 1.8rem;
         outline: none;
-        transform: translateX(8rem) ;
-        &::placeholder{
-          opacity: 0;
+        transform: translate(-800px);
+        opacity: 0;
+        &.active {
+          opacity: 100;
+          transform: translate(0);
+          transition: all 1s cubic-bezier(.52, -0.44, .56, 1.41);
+          &::placeholder {
+            opacity: 0;
+          }
+          &:focus + label {
+            transform: translate(-12rem -3rem);
+            transition-delay: 0s !important;
+            transition: all .4s;
+          }
+          &:not(:placeholder-shown) + label {
+            transform: translate(-12rem -3rem);
+            transition: all .5s;
+            transition-delay: 0s !important;
+          }
         }
-        &:focus + label{
-          transform: translate(-12rem, -3rem) !important;
 
-          transition: all 1s;
-        }
-        &:not(:placeholder-shown) + label{
-          transform: translate(-12rem, -3rem);
-          transition: all 1s;
-        }
       }
-      & .input__submit-label{
+      & .input__submit-label {
 
         font-size: 6rem;
 
@@ -81,15 +108,15 @@
         margin-right: 16rem;
         color: rgba(255, 255, 255, 0.61);
         position: relative;
-        &:hover{
-          &:before{
+        &:hover {
+          &:before {
             width: 100%;
             transition: all 2s;
           }
         }
-        &:before{
+        &:before {
           position: absolute;
-          transform: translate(0,4rem);
+          transform: translate(0, 4rem);
           content: "";
           display: block;
           height: .7rem;
@@ -99,67 +126,93 @@
           transition: all 1.5s;
 
         }
-        & .input__span{
+        & .input__span {
           z-index: 10;
           position: absolute;
           font-size: 3rem;
           font-family: "Lato";
           color: $color-blue;
-          transform: translate(8rem,-3rem);
+          transform: translate(8rem, -3rem);
         }
 
       }
     }
   }
-  &__animation__left{
+  &__animation__left {
     height: 100%;
     width: 100%;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     background-color: #000000;
     clip-path: polygon(16% 0%, 36% 100%, 0% 100%, 0% 0%);
-    &.active{
+    &.active {
 
       transition: transform .7s ease-in;
     }
   }
-  &__animation__right{
+  &__animation__right {
     height: 100%;
     width: 100%;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     background-color: #000000;
     clip-path: polygon(100% 0%, 100% 100%, 44% 100%, 24% 0%);
-    &.active{
+    &.active {
 
       transition: transform .7s ease-in;
     }
 
   }
+  &__animation__cover {
+    background-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, .7) 0%,
+            rgba(0, 0, 0, .3) 20%,
+            rgba(0, 0, 0, .3) 80%,
+            rgba(0, 0, 0, .7) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
 }
-.input__text{
+
+.input__text {
   margin-left: 4rem;
 }
-.input__email{
+
+.input__email {
   margin-left: 8rem;
 }
-.input__phone{
-   margin-left: 12rem;
- }
+
+.input__phone {
+  margin-left: 12rem;
+}
+
 .input__textarea {
   margin-left: 26rem;
-
-    transform: translateY(-6rem);
-
-
-
+  transform: translate(-800px, 0);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 2rem;
+  font-family: "Fredericka the Great";
+  color: $color-blue;
+  &.active {
+    visibility: visible;
+    opacity: 100;
+    transform: translate(-6rem, 0);
+    transition: all .5s cubic-bezier(.52, -0.44, .56, 1.41);
+    transition-delay: 1s;
+  }
 
 }
 
-
-#submit{
+#submit {
   //margin-left: 22rem;
   width: 0;
   visibility: hidden;

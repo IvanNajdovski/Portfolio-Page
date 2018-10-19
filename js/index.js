@@ -29,9 +29,9 @@ function isScrolledIntoViewLeft(a) {
     var elemTop = a.offset().top;
     var elemBottom = elemTop + a.outerHeight();
 
-    if (elemTop < docViewBottom) {
+    if (elemTop < docViewBottom -400) {
         a.addClass("active");
-        a.css("transform",`translateX(-${$(this).outerWidth()}px)`)
+        a.css("transform",`translateX(-${$(this).outerWidth() +500}px)`)
 
     } else {
         a.removeClass("active");
@@ -45,7 +45,7 @@ function isScrolledIntoViewRight(a) {
     var elemTop = a.offset().top;
     var elemBottom = elemTop + a.outerHeight();
 
-    if (elemTop < docViewBottom) {
+    if (elemTop < docViewBottom-400) {
         a.addClass("active");
         a.css("transform",`translateX(${$(this).outerWidth()}px)`)
 
@@ -61,18 +61,15 @@ function isScrolledIntoViewVanila(a) {
     var elemTop = a.offset().top;
     var elemBottom = elemTop + a.outerHeight();
 
-    if (elemTop < docViewBottom) {
+    if (elemBottom > docViewTop) {
         a.addClass("active");
 
-
-    } else {
-        a.removeClass("active");
 
     }
 
 };
 
-
+ var formItems = $(".form__box__form").children()
 
 $(document).ready(function () {
     setTimeout(function () {
@@ -317,7 +314,7 @@ $(document).ready(function () {
     });
 
 
-
+    var delay = 0;
     $(window).on("resize scroll", function(){
 
         $(".form__animation__left").each(function(){
@@ -329,8 +326,15 @@ $(document).ready(function () {
         $(".projects__box__header").each(function(){
             isScrolledIntoView($(this))
         });
-    })
 
+    });
+    $(window).one("resize scroll", function(){
+    $(".form__box__form").children().each(function(){
+        delay = delay + .2;
+        isScrolledIntoViewVanila($(this))
+        $(this).css("transition-delay",`${delay}s`)
+    })
+    });
 
 
 })
