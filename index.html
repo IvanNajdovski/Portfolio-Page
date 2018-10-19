@@ -274,23 +274,37 @@
 </div>
 <section class="form">
     <div class="projects__box">
-        <h1 class="projects__box__header">Contact Me<span>Contact Me</span></h1>
+        <h1 class="projects__box__header">Contact Me<span class="header__span">Contact Me</span></h1>
     </div>
     <div class="form__box wrapper-center">
-        <form action="" class="form__box__form">
+        <form action="https://formspree.io/ivan_najdovski@hotmail.com" method="POST" class="form__box__form">
+            <input class="input__text" type="text" id="text" name="name" placeholder="1">
             <label class="input__text" for="text">Your Name</label>
-            <input class="input__text" type="text" id="text">
+
+            <input class="input__email" type="email" id="email"  name ="_replyto" placeholder="1">
             <label class="input__email" for="email">Your Email</label>
-            <input class="input__email" type="email" id="email">
-            <label class="input__phone" for="phone">Phone Number</label>
-            <input class="input__phone" type="text" id="phone">
-            <label class="input__textarea" for="area">Message</label>
-            <textarea rows="4" class="input__textarea" type="text" id="area"></textarea>
+
+
+            <input class="input__phone" type="text" id="phone" name="_Phone Number" placeholder="1">
+            <label class="input__phone" for="phone">Phone Num</label>
+
+            <textarea rows="5" type="text" id="area" placeholder="1" name="_Message" ></textarea>
+            <label class="input__textarea class" for="area">Message</label>
+
+            <input class="input__submit" type="submit" id="submit"  placeholder="1">
             <label class="input__submit-label" for="submit">Submit <span class="input__span">Submit</span></label>
-            <input class="input__submit" type="submit" id="submit">
 
         </form>
     </div>
+    <div class="form__animation__left" style="z-index: 3; background-color:rgb(30,30,30); transition-delay: .2s"></div>
+    <div class="form__animation__left" style="z-index: 2; background-color:rgb(22,22,22); transition-delay: .4s"></div>
+    <div class="form__animation__left" style="z-index: 1; background-color:rgb(16,16,16); transition-delay: .6s"></div>
+
+
+        <div class="form__animation__right" style="z-index: 3; background-color:rgb(30,30,30);transition-delay: .2s"></div>
+        <div class="form__animation__right" style="z-index: 2;background-color:rgb(22,22,22);transition-delay: .4s"></div>
+        <div class="form__animation__right" style="z-index: 1;background-color:rgb(16,16,16);transition-delay: .6s"></div>
+
 </section>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="js/index.js"></script>

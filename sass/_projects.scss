@@ -20,11 +20,17 @@
       color: rgba(255,255,255, .3);
       font-family: "Fredericka the Great";
       font-size: 8rem;
+      &.animate{
+        transition: all .8s;
+        & span{
+          transition: all 1.2s;
+        }
+      }
       & span{
         position: absolute;
         bottom: -1rem;
         transform: translateX( -100%);
-        color: #fff;
+        color: $color-blue;
         font-family: "Fredericka the Great";
         font-size: 4rem;
       }

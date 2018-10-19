@@ -1,8 +1,11 @@
 .form{
-  //height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 
   &__box{
     height: 100%;
+    overflow: hidden;
     &__form{
       padding: 20rem 0;
       display: flex;
@@ -13,40 +16,87 @@
         font-size: 2rem;
         font-family: "Fredericka the Great";
         color: $color-blue;
-        transform: translateY(3rem);
+        transform: translateY(-3rem);
+        & :last-child{
+
+        }
       }
       & input{
         width: 50%;
-        padding: 1rem 4rem;
-
+        padding: 1rem 4rem 0 4rem;
         border: none;
         border-bottom: 1px solid lightgray;
         background-color: transparent;
+        outline: none;
+        color: #fff;
+        font-family: "Lato";
+        font-size: 1.8rem;
+
+        &::placeholder{
+          opacity: 0;
+        }
+        &:focus + label{
+          transform: translate(-12rem, -3rem) !important;
+
+          transition: all 1s;
+        }
+        &:not(:placeholder-shown) + label{
+          transform: translate(-12rem, -3rem);
+          transition: all 1s;
+      }
       }
       & textarea{
+        margin-left: 18rem;
         width: 50%;
-        padding: 1rem 3rem;
+        padding: 1rem 4rem 0 4rem;
         border: none;
+        //border-top: 1px solid lightgray;
         border-bottom: 1px solid lightgray;
+        border-radius: 5px;
         background-color: transparent;
+        color: #fff;
+        font-family: "Lato";
+        font-size: 1.8rem;
+        outline: none;
+        transform: translateX(8rem) ;
+        &::placeholder{
+          opacity: 0;
+        }
+        &:focus + label{
+          transform: translate(-12rem, -3rem) !important;
+
+          transition: all 1s;
+        }
+        &:not(:placeholder-shown) + label{
+          transform: translate(-12rem, -3rem);
+          transition: all 1s;
+        }
       }
       & .input__submit-label{
 
         font-size: 6rem;
 
         margin-left: auto;
+
         margin-right: 16rem;
         color: rgba(255, 255, 255, 0.61);
         position: relative;
+        &:hover{
+          &:before{
+            width: 100%;
+            transition: all 2s;
+          }
+        }
         &:before{
           position: absolute;
           transform: translate(0,4rem);
           content: "";
           display: block;
           height: .7rem;
-          width: 100%;
+          width: 0;
           background-color: red;
           z-index: -1;
+          transition: all 1.5s;
 
         }
         & .input__span{
@@ -61,6 +111,33 @@
       }
     }
   }
+  &__animation__left{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #000000;
+    clip-path: polygon(16% 0%, 36% 100%, 0% 100%, 0% 0%);
+    &.active{
+
+      transition: transform .7s ease-in;
+    }
+  }
+  &__animation__right{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #000000;
+    clip-path: polygon(100% 0%, 100% 100%, 44% 100%, 24% 0%);
+    &.active{
+
+      transition: transform .7s ease-in;
+    }
+
+  }
 }
 .input__text{
   margin-left: 4rem;
@@ -71,12 +148,19 @@
 .input__phone{
    margin-left: 12rem;
  }
-.input__textarea{
-  margin-left: 16rem;
+.input__textarea {
+  margin-left: 26rem;
+
+    transform: translateY(-6rem);
+
+
+
+
 }
 
 
 #submit{
+  //margin-left: 22rem;
   width: 0;
   visibility: hidden;
   opacity: 0;

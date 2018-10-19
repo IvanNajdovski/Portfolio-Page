@@ -486,7 +486,7 @@ body {
 
 .skill__img {
   position: relative;
-  width: 170px;
+  width: 150px;
   height: 200px;
   flex: 0 0 10%;
   padding: 2rem;
@@ -548,11 +548,15 @@ body {
       color: rgba(255, 255, 255, 0.3);
       font-family: "Fredericka the Great";
       font-size: 8rem; }
+      .projects__box__header.animate {
+        transition: all .8s; }
+        .projects__box__header.animate span {
+          transition: all 1.2s; }
       .projects__box__header span {
         position: absolute;
         bottom: -1rem;
         transform: translateX(-100%);
-        color: #fff;
+        color: #80beff;
         font-family: "Fredericka the Great";
         font-size: 4rem; }
   .projects__content {
@@ -781,52 +785,108 @@ body {
 .hidden {
   visibility: hidden; }
 
-.form__box {
-  height: 100%; }
-  .form__box__form {
-    padding: 20rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-    .form__box__form label {
-      font-size: 2rem;
-      font-family: "Fredericka the Great";
-      color: #80beff;
-      transform: translateY(3rem); }
-    .form__box__form input {
-      width: 50%;
-      padding: 1rem 4rem;
-      border: none;
-      border-bottom: 1px solid lightgray;
-      background-color: transparent; }
-    .form__box__form textarea {
-      width: 50%;
-      padding: 1rem 3rem;
-      border: none;
-      border-bottom: 1px solid lightgray;
-      background-color: transparent; }
-    .form__box__form .input__submit-label {
-      font-size: 6rem;
-      margin-left: auto;
-      margin-right: 16rem;
-      color: rgba(255, 255, 255, 0.61);
-      position: relative; }
-      .form__box__form .input__submit-label:before {
-        position: absolute;
-        transform: translate(0, 4rem);
-        content: "";
-        display: block;
-        height: .7rem;
-        width: 100%;
-        background-color: red;
-        z-index: -1; }
-      .form__box__form .input__submit-label .input__span {
-        z-index: 10;
-        position: absolute;
-        font-size: 3rem;
-        font-family: "Lato";
+.form {
+  overflow: hidden;
+  width: 100%;
+  position: relative; }
+  .form__box {
+    height: 100%;
+    overflow: hidden; }
+    .form__box__form {
+      padding: 20rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .form__box__form label {
+        font-size: 2rem;
+        font-family: "Fredericka the Great";
         color: #80beff;
-        transform: translate(8rem, -3rem); }
+        transform: translateY(-3rem); }
+      .form__box__form input {
+        width: 50%;
+        padding: 1rem 4rem 0 4rem;
+        border: none;
+        border-bottom: 1px solid lightgray;
+        background-color: transparent;
+        outline: none;
+        color: #fff;
+        font-family: "Lato";
+        font-size: 1.8rem; }
+        .form__box__form input::placeholder {
+          opacity: 0; }
+        .form__box__form input:focus + label {
+          transform: translate(-12rem, -3rem) !important;
+          transition: all 1s; }
+        .form__box__form input:not(:placeholder-shown) + label {
+          transform: translate(-12rem, -3rem);
+          transition: all 1s; }
+      .form__box__form textarea {
+        margin-left: 18rem;
+        width: 50%;
+        padding: 1rem 4rem 0 4rem;
+        border: none;
+        border-bottom: 1px solid lightgray;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #fff;
+        font-family: "Lato";
+        font-size: 1.8rem;
+        outline: none;
+        transform: translateX(8rem); }
+        .form__box__form textarea::placeholder {
+          opacity: 0; }
+        .form__box__form textarea:focus + label {
+          transform: translate(-12rem, -3rem) !important;
+          transition: all 1s; }
+        .form__box__form textarea:not(:placeholder-shown) + label {
+          transform: translate(-12rem, -3rem);
+          transition: all 1s; }
+      .form__box__form .input__submit-label {
+        font-size: 6rem;
+        margin-left: auto;
+        margin-right: 16rem;
+        color: rgba(255, 255, 255, 0.61);
+        position: relative; }
+        .form__box__form .input__submit-label:hover:before {
+          width: 100%;
+          transition: all 2s; }
+        .form__box__form .input__submit-label:before {
+          position: absolute;
+          transform: translate(0, 4rem);
+          content: "";
+          display: block;
+          height: .7rem;
+          width: 0;
+          background-color: red;
+          z-index: -1;
+          transition: all 1.5s; }
+        .form__box__form .input__submit-label .input__span {
+          z-index: 10;
+          position: absolute;
+          font-size: 3rem;
+          font-family: "Lato";
+          color: #80beff;
+          transform: translate(8rem, -3rem); }
+  .form__animation__left {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    clip-path: polygon(16% 0%, 36% 100%, 0% 100%, 0% 0%); }
+    .form__animation__left.active {
+      transition: transform .7s ease-in; }
+  .form__animation__right {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    clip-path: polygon(100% 0%, 100% 100%, 44% 100%, 24% 0%); }
+    .form__animation__right.active {
+      transition: transform .7s ease-in; }
 
 .input__text {
   margin-left: 4rem; }
@@ -838,7 +898,8 @@ body {
   margin-left: 12rem; }
 
 .input__textarea {
-  margin-left: 16rem; }
+  margin-left: 26rem;
+  transform: translateY(-6rem); }
 
 #submit {
   width: 0;

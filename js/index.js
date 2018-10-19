@@ -1,3 +1,79 @@
+//SCROLING FUNCTION
+function isScrolledIntoView(a) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = a.offset().top;
+    var elemBottom = elemTop + a.outerHeight();
+
+    if (elemBottom > docViewTop && elemTop < docViewBottom) {
+        a.addClass("animate");
+        var transform = docViewBottom - elemBottom
+        a.css("transform",`translateX(${transform/5}px)`)
+        a.children("span").css("transform",`translateX(${transform/3 - $(".header__span").innerWidth()}px)`)
+        console.log($(window).height());
+        if(transform > $(window).height()/3){
+            var opacity = ( (($(window).height()/6))/transform);
+            var opacityTwo = ( (($(window).height()/2))/transform);
+            console.log(opacity)
+            a.css("color",`rgba(255,255,255, ${opacity})`)
+            a.children("span").css("color",`rgba(174, 174, 174, ${opacityTwo})`)
+        }
+    } else {
+        a.removeClass("animate");
+    }
+
+};
+function isScrolledIntoViewLeft(a) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = a.offset().top;
+    var elemBottom = elemTop + a.outerHeight();
+
+    if (elemTop < docViewBottom) {
+        a.addClass("active");
+        a.css("transform",`translateX(-${$(this).outerWidth()}px)`)
+
+    } else {
+        a.removeClass("active");
+
+    }
+
+};
+function isScrolledIntoViewRight(a) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = a.offset().top;
+    var elemBottom = elemTop + a.outerHeight();
+
+    if (elemTop < docViewBottom) {
+        a.addClass("active");
+        a.css("transform",`translateX(${$(this).outerWidth()}px)`)
+
+    } else {
+        a.removeClass("active");
+
+    }
+
+};
+function isScrolledIntoViewVanila(a) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = a.offset().top;
+    var elemBottom = elemTop + a.outerHeight();
+
+    if (elemTop < docViewBottom) {
+        a.addClass("active");
+
+
+    } else {
+        a.removeClass("active");
+
+    }
+
+};
+
+
+
 $(document).ready(function () {
     setTimeout(function () {
         $(".logo").addClass("active");
@@ -238,10 +314,24 @@ $(document).ready(function () {
         $(this).find(".under").removeClass("active");
         counter = 0
         clearInterval(count)
+    });
 
 
 
+    $(window).on("resize scroll", function(){
+
+        $(".form__animation__left").each(function(){
+            isScrolledIntoViewLeft($(this))
+        });
+        $(".form__animation__right").each(function(){
+            isScrolledIntoViewRight($(this))
+        });
+        $(".projects__box__header").each(function(){
+            isScrolledIntoView($(this))
+        });
     })
+
+
 
 })
 
