@@ -12,17 +12,19 @@ html {
   cursor: none; }
 
 body {
+  overflow: hidden;
   background-color: #000;
   cursor: none; }
 
 .pic {
-  display: none;
+  z-index: 10000;
   text-align: center;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
-  left: 0; }
+  left: 0;
+  background-color: #000; }
 
 .blur {
   height: 100%; }
@@ -233,7 +235,8 @@ body {
   justify-content: center;
   top: 3rem;
   right: 5rem;
-  transform: matrix(1, 0, 0, 1, 5, 5); }
+  transform: matrix(1, 0, 0, 1, 5, 5);
+  z-index: 10000; }
   .loading p {
     font-family: Arial;
     color: #ffc36d;
@@ -252,7 +255,7 @@ body {
   stroke-dasharray: 300, 300;
   stroke-dashoffset: 300; }
   .circle-fill.active {
-    animation: border 2s linear; }
+    animation: border 1s linear; }
 
 .empty {
   width: 5rem;

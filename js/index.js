@@ -69,7 +69,7 @@ function isScrolledIntoViewVanila(a) {
 
 };
 
- var formItems = $(".form__box__form").children()
+$(".nav").hide();
 
 $(document).ready(function () {
     setTimeout(function () {
@@ -89,14 +89,10 @@ $(document).ready(function () {
     });
 
     $(window).on("mousemove", function (e) {
-        // var top = e.pageY - ($(".cursor").outerHeight() / 2)
-        // var topSmall = e.pageY - ($(".cursor-small").outerHeight() / 2)
-        // var left = e.pageX - ($(".cursor").outerWidth() / 2)
-        // var leftSmall = e.pageX - ($(".cursor-small").outerWidth() / 2)
+
         var top = e.pageY;
         var left = e.pageX;
-        // $(".cursor").css("transform", `matrix(1,0,0,1,${left},${top})`)
-        // $(".cursor-small").css("transform", `matrix(1,0,0,1,${leftSmall},${topSmall})`)
+
         $(".cursor-small").css("top", `${top}px`);
         $(".cursor-small").css("left", `${left}px`)
         $(".cursor").css("left", `${left - 15}px`)
@@ -109,7 +105,7 @@ $(document).ready(function () {
         $(".loading-text").addClass("active");
         $(".circle-fill").addClass("active");
         interval = setInterval(function () {
-            radius = radius + 5;
+            radius = radius + 10;
             $(".curcle").attr("r", `${radius}`);
 
         }, 20)
@@ -118,12 +114,24 @@ $(document).ready(function () {
     })
     $(document).on("mouseup", function () {
         if (radius > 300) {
+            $(".nav").show();
+            $("body").css("overflow","visible")
             clearInterval(interval)
             $(".loading").css("display", "none");
-
             $(".cursor-small").css("display", "block");
             $(".cursor").css("display", "block");
-
+            setTimeout(function(){
+                $(".top__box").addClass("active")
+            },2000)
+            setTimeout(function(){
+                var delay = 0;
+                $(".boxpanel").each(function () {
+                    delay = delay + .15
+                    $(this).css("transition-delay", `${delay}s`)
+                    $(this).addClass("active")
+                })
+                $(".boxpanelPrime").addClass("active")
+            },4000);
             interval = setInterval(function () {
                 radius = radius + 10;
                 $(".curcle").attr("r", `${radius}`);
@@ -134,7 +142,7 @@ $(document).ready(function () {
                 $(".pic").css("display","none");
                 $(".top").addClass("active");
                 $(".nav").addClass("active");
-            },1500);
+            },500);
 
         } else {
             clearInterval(interval)
@@ -165,21 +173,8 @@ $(document).ready(function () {
     });
 
     // ------------------------MENU ANIMATION ---------------------------
-    $(".nav__box__menu").on("click", function () {
 
-    });
-    setTimeout(function(){
-        $(".top__box").addClass("active")
-    },2000)
-    setTimeout(function(){
-        var delay = 0;
-        $(".boxpanel").each(function () {
-            delay = delay + .15
-            $(this).css("transition-delay", `${delay}s`)
-            $(this).addClass("active")
-        })
-        $(".boxpanelPrime").addClass("active")
-    },4000)
+
 
     $("span").on("mouseover", function(e){
         $(this).addClass("active")
@@ -203,24 +198,7 @@ $(document).ready(function () {
             $(".top__navbar").addClass("active");
         }
     });
-    // $(window).one("resize scroll", function(){
-    //     if($(window).scrollTop() > 100){
-    //         console.log("scrolled")
-    //         $(".boxpanel").each(function () {
-    //             $(this).removeClass("active")
-    //         })
-    //
-    //             var delay = 0;
-    //
-    //             $(".boxpanel").each(function () {
-    //                 delay = delay + .15
-    //                 $(this).css("transition-delay", `${delay}s`)
-    //                 $(this).addClass("active")
-    //             })
-    //             $(".boxpanelPrime").addClass("active")
-    //
-    //     }
-    // })
+
 
     // ----------------------PROJECT LIST ANIMATION ------------------------
     $(".list__number").on("click", function(){
@@ -261,8 +239,7 @@ $(document).ready(function () {
             $(".projects__content__photos__desktop").addClass("active");
             $(".projects__content__photos__mobile").addClass("active");
         },500)
-        // console.log(index)
-        // $(".line").index(0).addClass("active");
+
     });
     //--------------------PROJECT PHOTOS ROTATION--------------------
     $(".projects__content__photos").on("mousemove",function(e){
@@ -274,7 +251,6 @@ $(document).ready(function () {
         var left = $(".projects__content__photos").offset().left;
         offsetX = (x - (left + ($(".projects__content__photos").outerWidth()/2)))/50;
         offsetY = (y - (top + ($(".projects__content__photos").outerHeight()/2)))/30;
-        console.log("top is",offsetY,"left is", offsetX)
 
 
         $(".projects__content__photos").css("translation","transform .5s")

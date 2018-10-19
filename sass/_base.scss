@@ -26,18 +26,20 @@ html{
   cursor: none;
 }
 body{
-  //overflow: hidden;
+  overflow: hidden;
   background-color: #000;
   cursor: none;
 }
 .pic {
-  display: none;
+  z-index: 10000;
+  //display: none;
   text-align: center;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
   left:0;
+  background-color: #000;
 }
 .blur {
   height: 100%;
