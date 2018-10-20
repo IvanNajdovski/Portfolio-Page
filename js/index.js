@@ -81,13 +81,20 @@ $(document).ready(function () {
     });
 
     $(window).on("mousemove", function (e) {
-        var top = e.pageY;
-        var left = e.pageX;
-        $(".cursor-small").css("top", `${top}px`);
-        $(".cursor-small").css("left", `${left}px`);
-        $(".cursor").css("left", `${left - 15}px`);
-        $(".cursor").css("top", `${top - 15}px`);
+        if($(window).width() > 400) {
+            var top = e.pageY;
+            var left = e.pageX;
+            $(".cursor-small").css("top", `${top}px`);
+            $(".cursor-small").css("left", `${left}px`);
+            $(".cursor").css("left", `${left - 15}px`);
+            $(".cursor").css("top", `${top - 15}px`);
+        }
     })
+    // $(window).on("scroll touchstart",function(){
+    //     if($(window).width() <400){
+    //         cursor
+    //     }
+    // })
     var interval;
     var radius = 20;
     $(window).on("mousedown touchstart", function (e) {
@@ -97,6 +104,7 @@ $(document).ready(function () {
             radius = radius + 10;
             $(".curcle").attr("r", `${radius}`);
         }, 20);
+
     });
 
     $(document).on("mouseup touchend", function () {
@@ -105,8 +113,8 @@ $(document).ready(function () {
             $(".nav").show();
             clearInterval(interval);
             $(".loading").css("display", "none");
-            $(".cursor-small").css("display", "block");
-            $(".cursor").css("display", "block");
+            // $(".cursor-small").css("display", "block");
+            // $(".cursor").css("display", "block");
             setTimeout(function () {
                 $(".top__box").addClass("active");
             }, 2000);

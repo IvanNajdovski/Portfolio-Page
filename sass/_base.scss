@@ -96,6 +96,9 @@ body{
   mix-blend-mode: difference;
   vertical-align: baseline;
   pointer-events: none;
+  @media only screen and(max-width: $bp-small){
+    display: none;
+  }
   &.expand{
     width:100px;
     height: 100px;
@@ -116,6 +119,9 @@ body{
 
   mix-blend-mode: difference;
   z-index: 5551;
+  @media only screen and(max-width: $bp-small){
+    display: none;
+  }
   &.hidden{
     visibility: hidden;
     opacity: 0;
