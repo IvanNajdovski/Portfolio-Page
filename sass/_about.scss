@@ -12,20 +12,41 @@
   background-position: bottom left;
   //height: 100vh;
   width: 100%;
+  @media only screen and(max-width: $bp-medium){
+    margin-top: 5rem;
+    padding-bottom: 10rem;
+  }
 
   &__content{
-    margin-bottom: 10rem;
+    //margin-bottom: 10rem;
     &__top{
       //display: flex;
       //align-items: center;
       padding: 8rem;
+      @media only screen and(max-width: $bp-medium){
+        padding: 4rem;
+      }
+      @media only screen and(max-width: $bp-small){
+        padding: 1.5rem;
+      }
       &__header{
+        padding-top: 4rem;
         font-family: "Lato";
         text-align: center;
         font-size: 1.8rem;
         color: rgba(184, 184, 184, 0.72);
         line-height: 4rem;
         letter-spacing: .2rem;
+        @media only screen and(max-width: $bp-medium){
+          letter-spacing: .1rem;
+          line-height: 3rem;
+          font-size: 1.6rem;
+        }
+        @media only screen and(max-width: $bp-small){
+          letter-spacing: .1rem;
+          line-height: 3rem;
+          font-size: 1.4em;
+        }
       }
     }
     &__bottom{
@@ -33,10 +54,23 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+      @media only screen and(max-width: $bp-large-medium){
+        flex-wrap: wrap;
+        & >*{
+          flex: 0 0 20%;
+        }
+      }
+      @media only screen and(max-width: $bp-medium){
+       flex-direction: column;
+      }
 
 
     }
   }
+}
+.skill{
+  //display: flex;
+  //justify-content: center;
 }
 .skill__img{
   position: relative;
@@ -48,6 +82,94 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and(max-width: 1500px){
+    width: 120px;
+  }
+  @media only screen and(max-width: $bp-large){
+    width: 100%;
+  }
+  @media only screen and(max-width: $bp-large-medium){
+
+    &.skill__down{
+      & > img{
+
+        &.active{
+
+          transform: translateY(130px);
+
+        }
+      }
+      & .under{
+
+
+        transform: translateY(130px);
+
+        &.active{
+
+          transform: translateY(0);
+          
+
+        }
+      }
+    }
+  }
+  @media only screen and(max-width: $bp-medium){
+  width: 150px;
+    &.skill__right{
+      & > img{
+
+        &.active{
+
+          transform: translateX(100%);
+
+        }
+      }
+      & .under{
+
+        text-align: center;
+        color: #fff;
+        font-size: 4rem;
+        font-family: "Fredericka the Great";
+        filter: grayscale(70%) brightness(150%);
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transform: translateY(130px);
+        opacity: 0;
+        visibility: hidden;
+        &.active{
+          visibility: visible;
+          opacity: 100;
+          transform: translateY(0);
+          transition: all .5s cubic-bezier( .52,-0.44,0,1.41);
+          transition-delay: .2s;
+
+        }
+      }
+    }
+    &.skill__left{
+      & > img{
+
+        &.active{
+          transform: translateX(-100%);
+
+        }
+      }
+      & .under{
+
+
+        transform: translateY(130px);
+
+        &.active{
+
+          transform: translateY(0);
+
+
+        }
+      }
+    }
+  }
+
 
   & > img{
     //position: absolute;
@@ -61,12 +183,15 @@
       //opacity: 0;
       //visibility: hidden;
       filter: grayscale(10%) brightness(150%);
-      transform: translateY(-170px);
+      transform: translateY(-130px);
       transition: all .3s cubic-bezier( .52,-0.44,.56,1.41);
     }
   }
 }
 .div__box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -85,7 +210,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  transform: translateY(170px);
+  transform: translateY(130px);
   opacity: 0;
   visibility: hidden;
   &.active{

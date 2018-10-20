@@ -1,0 +1,10 @@
+.footer{
+  padding: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  & h1{
+    color: lightgray;
+    font-size: 1.8rem;
+    font-family: "Fredericka the Great";
+  }
+}

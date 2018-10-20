@@ -1,4 +1,19 @@
+//LOGO
+$strokeColor: #9E9E9E;
+$logoColor: #80beff;
+$size: 140px;
+$totalAnim: 9s;
+$delay: 1s;
+$svgSize: 70;
+$squareLen: $svgSize * 4;
+$lineLen: $svgSize;
+$linesPerSide: 6;
+$strokeLen: 600;
+$fillLen: 290;
 
+
+
+//BREAK POINTS
 $bp-large: 75em;                //1200px
 $bp-large-medium: 62.5em;       //1000px
 $bp-large-small: 50em;          //800px
@@ -7,6 +22,8 @@ $bp-medium-small: 31.25em;      //500px
 $bp-small: 25em;                //400px
 $bp-smallest: 18.75em;          //300px
 
+
+//PAGE VARIABLES
 $color-primary: #dadada;
 $color-blue: #80beff;
 
@@ -24,6 +41,18 @@ html{
   box-sizing: border-box;
   font-size: 62.4%;
   cursor: none;
+  @media only screen and(max-width: $bp-large){
+    font-size: 57%;
+  }
+  @media only screen and(max-width: $bp-large-small){
+    font-size: 54%;
+  }
+  @media only screen and(max-width: $bp-medium){
+    font-size: 50%;
+  }
+  @media only screen and(max-width: $bp-small){
+    font-size: 45%;
+  }
 }
 body{
   overflow: hidden;
@@ -58,10 +87,10 @@ body{
   position: absolute;
   top:0;
   left:0;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   transform: translate(15px 15px);
-  z-index: 5500;
+  z-index: 15500;
   transition: top .15s, left .15s;
   overflow: hidden;
   mix-blend-mode: difference;
@@ -86,7 +115,7 @@ body{
 
 
   mix-blend-mode: difference;
-  z-index: 5551;
+  z-index: 15551;
   &.hidden{
     visibility: hidden;
     opacity: 0;

@@ -1,14 +1,4 @@
-$strokeColor: #9E9E9E;
-$logoColor: $color-primary;
-$size: 140px;
-$totalAnim: 9s;
-$delay: 1s;
-$svgSize: 70;
-$squareLen: $svgSize * 4;
-$lineLen: $svgSize;
-$linesPerSide: 6;
-$strokeLen: 600;
-$fillLen: 290;
+
 
 .logo {
 
@@ -22,24 +12,22 @@ $fillLen: 290;
   width: $size;
   height: $size;
   overflow: visible;
-  &.active{
+  &.active {
     top: 10rem;
     left: 5rem;
     transform: translateY(-50%) scale(.1);
     transition: all 1s;
   }
 
-
   &__mainGroup {
     transform-origin: 35px 35px;
 
-
   }
-  &__colorGroupTwo{
+  &__colorGroupTwo {
     transform: translateY(230px);
 
   }
-  &__colorGroup{
+  &__colorGroup {
     &.active {
       animation: move 2s linear infinite;
     }
@@ -53,18 +41,17 @@ $fillLen: 290;
   }
   &__grayGroupTwo {
     transform: translateY(100px);
-    animation: grayGroupAnim $totalAnim $delay ;
+    animation: grayGroupAnim $totalAnim $delay;
     animation-iteration-count: 1;
     animation-delay: 4s;
 
   }
 
-
   &__square {
     stroke: $strokeColor;
     stroke-dasharray: $squareLen, $squareLen;
     stroke-dashoffset: $squareLen;
-    animation: square-anim $totalAnim $delay ;
+    animation: square-anim $totalAnim $delay;
     animation-iteration-count: 1;
     animation-delay: 4s;
 
@@ -73,13 +60,11 @@ $fillLen: 290;
     stroke: $strokeColor;
     stroke-dasharray: 620, 620;
     stroke-dashoffset: 620;
-    animation: square-anim $totalAnim $delay ;
+    animation: square-anim $totalAnim $delay;
     animation-iteration-count: 1;
     animation-delay: 4s;
 
   }
-
-
 
   &__stroke {
     stroke: $logoColor;
@@ -105,11 +90,10 @@ $fillLen: 290;
     stroke: $logoColor;
     stroke-dasharray: $fillLen, $fillLen;
     stroke-dashoffset: $fillLen;
-    animation: fillAnim $totalAnim $delay ;
+    animation: fillAnim $totalAnim $delay;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 4s;
-
 
   }
   &__fillTwo {
@@ -117,7 +101,7 @@ $fillLen: 290;
     stroke: $logoColor;
     stroke-dasharray: 650, 650;
     stroke-dashoffset: 650;
-    animation: fillAnimTwo 9s $delay ;
+    animation: fillAnimTwo 9s $delay;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 4s;
@@ -133,7 +117,6 @@ $fillLen: 290;
     stroke-dashoffset: 0;
   }
 }
-
 
 @keyframes mainGroupAnim {
   26% {
@@ -181,6 +164,7 @@ $fillLen: 290;
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes strokeAnimTwo {
   33% {
     stroke-dashoffset: 1050;
@@ -204,6 +188,7 @@ $fillLen: 290;
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes fillAnimTwo {
   66% {
     stroke-dashoffset: 650;
@@ -215,24 +200,25 @@ $fillLen: 290;
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes move {
-  0%{
+  0% {
     transform: translateX(0);
 
   }
-  25%{
+  25% {
     transform: translateX(-2rem);
 
   }
-  75%{
+  75% {
     transform: translateX(2rem);
 
   }
-  100%{
+  100% {
     transform: translateX(0rem);
 
   }
-  }
+}
 
 
 

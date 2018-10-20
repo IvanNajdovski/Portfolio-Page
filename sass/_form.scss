@@ -179,7 +179,18 @@
     left: 0;
     pointer-events: none;
   }
-
+  &__button__box{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem;
+  }
+  &__header{
+    text-align: center;
+    font-size: 3rem;
+    color: $color-blue;
+    font-family: "Kaushan Script";
+    padding-bottom: 2rem;
+  }
 }
 
 .input__text {

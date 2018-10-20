@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a href="" id="home"></a>
 <svg class="logo " xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70 70"
      version="1.1">
@@ -39,24 +41,26 @@
 </svg>
 <div class="pic">
     <svg class="blur" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%">
-        <image class="imgOne" filter="url(#filter2)" xlink:href="img/Background1.jpg" width="100%" height="100%"></image>
+        <image class="imgOne" filter="url(#filter2)" xlink:href="img/Background1.jpg" width="100%"
+               height="100%"></image>
         <filter id="filter2">
-            <feGaussianBlur stdDeviation="10" />
+            <feGaussianBlur stdDeviation="10"/>
         </filter>
         <mask id="mask1">
-            <circle class="curcle" cx="100" cy="100" r="75" stroke="black" stroke-width="7" fill="white" filter="url(#filter2)" />
+            <circle class="curcle" cx="100" cy="100" r="75" stroke="black" stroke-width="7" fill="white"
+                    filter="url(#filter2)"/>
         </mask>
         <image class="imgTwo" xlink:href="img/Background1.jpg" width="100%" height="100%" mask="url(#mask1)"></image>
     </svg>
 </div>
 <!--<div class="cursor"></div>-->
 <!--<div class="cursor-small">-->
-    <!--<svg height="10" width="10"> <circle class="circle" cx="5" cy="5" r="5" stroke-width="0" ></circle> </svg>-->
+<!--<svg height="10" width="10"> <circle class="circle" cx="5" cy="5" r="5" stroke-width="0" ></circle> </svg>-->
 <!--</div>-->
 <div class="loading">
     <p class="loading-text">Hold Down</p>
     <svg class="loading-circle" height="80" width="80">
-        <circle class="circle-fill" cx="40" cy="40" r="40" stroke="#ffc36d" fill="rgba(0,0,0,.5)" stroke-width="4" />
+        <circle class="circle-fill" cx="40" cy="40" r="40" stroke="#ffc36d" fill="rgba(0,0,0,.5)" stroke-width="4"/>
     </svg>
 
 </div>
@@ -64,11 +68,15 @@
     <div class="nav__box">
         <div class="nav__box-content">
             <ul class="nav__box-content-list">
-                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-facebook-square"></i></a></li>
-                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-instagram"></i></a></li>
-                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-linkedin"></i></a></li>
+                <li class="nav__box-content-list-items"><a href="https://www.facebook.com/ivan.najdovski.7"><i
+                        class="fab fa-facebook-square"></i></a></li>
+                <li class="nav__box-content-list-items"><a href="https://www.instagram.com/ivannajdovski/"><i
+                        class="fab fa-instagram"></i></a></li>
+                <li class="nav__box-content-list-items"><a href="https://www.linkedin.com/in/ivan-najdovski-4985a3167/"><i
+                        class="fab fa-linkedin"></i></a></li>
                 <li class="nav__box-content-list-items"><a href=""><i class="fab fa-twitter"></i></a></li>
-                <li class="nav__box-content-list-items"><a href=""><i class="fab fa-github"></i></i></a></li>
+                <li class="nav__box-content-list-items"><a href="https://github.com/IvanNajdovski"><i
+                        class="fab fa-github"></i></i></a></li>
 
 
             </ul>
@@ -80,15 +88,10 @@
 </div>
 <div class="cursor-box">
     <div class="cursor active">
-        <!--<svg >-->
-        <!--<circle class="circle-big"  cx="20" cy="20" r="15"  stroke-width="0"  style="fill: rgb(255,255,255)">-->
-
-        <!--</circle>-->
-        <!--</svg>-->
     </div>
     <div class="cursor-small active">
         <svg height="10" width="10">
-            <circle class="circle" cx="5" cy="5" r="5" stroke-width="0" >
+            <circle class="circle" cx="5" cy="5" r="5" stroke-width="0">
 
             </circle>
         </svg>
@@ -97,17 +100,36 @@
 <section class="top">
     <div class="top__navbar">
         <ul class="top__navbar__list">
-            <li class="top__navbar__list__item">Home </li>
-            <li class="top__navbar__list__item">About Me</li>
-            <li class="top__navbar__list__item">Project</li>
-            <li class="top__navbar__list__item">Contact</li>
+            <li class="top__navbar__list__item"><a class="navbar__link" href="#home">Home</a></li>
+            <li class="top__navbar__list__item"><a class="navbar__link" href="#about">About Me</a></li>
+            <li class="top__navbar__list__item"><a class="navbar__link" href="#projects">Project</a></li>
+            <li class="top__navbar__list__item"><a class="navbar__link" href="#contact">Contact</a></li>
         </ul>
     </div>
-
     <div class="top__box">
-        <div class="top__box-header"><div>W</div><div>e</div><div>l</div><div>l</div><div>c</div><div>o</div><div>m</div><div>e</div></div>
-        <div class="top__box-header"><div>T</div><div>o</div> <div class="empty">&nbsp;</div> <div>M</div><div>y</div></div>
-        <div class="top__box-header"><div>P</div><div>a</div><div>g</div><div>e</div></div>
+        <div class="top__box-header">
+            <div>W</div>
+            <div>e</div>
+            <div>l</div>
+            <div>l</div>
+            <div>c</div>
+            <div>o</div>
+            <div>m</div>
+            <div>e</div>
+        </div>
+        <div class="top__box-header">
+            <div>T</div>
+            <div>o</div>
+            <div class="empty">&nbsp;</div>
+            <div>M</div>
+            <div>y</div>
+        </div>
+        <div class="top__box-header">
+            <div>P</div>
+            <div>a</div>
+            <div>g</div>
+            <div>e</div>
+        </div>
     </div>
     <div class="boxpanel"></div>
     <div class="boxpanel"></div>
@@ -118,17 +140,23 @@
 </section>
 <div class="background-fixed"></div>
 <section class="about">
+    <a href="" id="about"></a>
     <div class="projects__box">
         <h1 class="projects__box__header">My Journey<span>My Journey</span></h1>
     </div>
     <div class="about__content">
         <div class="about__content__top wrapper-center">
-            <h1 class="about__content__top__header">Started learning about coding and programing at the beginning of 2018. From that period till present i acquired knowledge of HTML, HTML5, CSS, CSS3, SASS, Bootstrap, JavaScript, NodeJS, databases SQL like PostgresQL and NoSQL like MongoDB planing to explore React library. My main goal is to became Full-Stack Developer with the prime put on Front-End technologies, in that directions im ready to learn form professionals and im open to learn about new technologies and techniques.</h1>
+            <h1 class="about__content__top__header">Started learning about coding and programing at the beginning of
+                2018. From that period till present i acquired knowledge of HTML, HTML5, CSS, CSS3, SASS, Bootstrap,
+                JavaScript, NodeJS, databases SQL like PostgresQL and NoSQL like MongoDB planing to explore React
+                library. My main goal is to became Full-Stack Developer with the prime put on Front-End technologies, in
+                that directions im ready to learn form professionals and im open to learn about new technologies and
+                techniques.</h1>
         </div>
         <div class="about__content__bottom">
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__right">
                     <img src="img/skill/html.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="94" class="under"></h1>
@@ -137,7 +165,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__left">
                     <img src="img/skill/css.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="93" class="under"></h1>
@@ -146,7 +174,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__right">
                     <img src="img/skill/sass.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="87" class="under"></h1>
@@ -155,7 +183,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__left">
                     <img src="img/skill/bootstrap.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="64" class="under"></h1>
@@ -164,7 +192,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__right">
                     <img src="img/skill/javascript.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="72" class="under"></h1>
@@ -173,7 +201,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__down skill__left">
                     <img src="img/skill/nodejs.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="51" class="under"></h1>
@@ -182,7 +210,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__down skill__right">
                     <img src="img/skill/postgres.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="38" class="under"></h1>
@@ -191,7 +219,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__down skill__left">
                     <img src="img/skill/mongodb.png" alt="">
                     <div class="div__box">
                         <h1 aria-label="44" class="under"></h1>
@@ -199,8 +227,8 @@
                 </div>
             </div>
             <div class="skill ">
-                
-                <div class="skill__img">
+
+                <div class="skill__img skill__down skill__right">
                     <img src="img/skill/canvas.png" alt="">
                     <div class="div__box">
                         <img class="under" src="img/skill/under.png" alt="">
@@ -210,7 +238,7 @@
             </div>
             <div class="skill ">
 
-                <div class="skill__img">
+                <div class="skill__img skill__down skill__left">
                     <img src="img/skill/react.png" alt="">
                     <div class="div__box">
                         <img class="under" src="img/skill/under.png" alt="">
@@ -221,6 +249,7 @@
     </div>
 </section>
 <div class="projects">
+    <a href="" id="projects"></a>
     <div class="projects__box">
         <h1 class="projects__box__header">My Projects <span>My Projects</span></h1>
     </div>
@@ -236,15 +265,17 @@
                 <li class="list__number">04</li>
                 <li class="line "></li>
                 <li class="list__number">05</li>
-
             </ul>
         </div>
         <div class="projects__content__title">
             <h1 class="project__name">Weather Forecast</h1>
-            <p class="project__details">Page is using three API to collect Weather, Geolocation and Photos data and is giving the user information for the weather of the given location. The application is using Axios NodeJs library to call the API's and EJS for template rendering. Also favorite location is best done with database but for investigating the localStorage sistem we used localStorage instead. </p>
-
+            <p class="project__details">Page is using three API to collect Weather, Geolocation and Photos data and is
+                giving the user information for the weather of the given location. The application is using Axios NodeJs
+                library to call the API's and EJS for template rendering. Also favorite location is best done with
+                database but for investigating the localStorage sistem we used localStorage instead. </p>
             <div class="project__link-page">
-                <div class="content__link"><span class="spanOne">Open Webpage</span><span class="spanTwo">Open Webpage</span></div>
+                <div class="content__link"><span class="spanOne"><a class="button__link__page" href="https://polar-brook-39410.herokuapp.com/?fbclid=IwAR335aD-nWzY7ArmomXoIKfqp1p29uyX5f2b3rd0_leiVDfSBqi-WHxSy64">Open Webpage</a></span><span
+                        class="spanTwo"><a class="button__link__page" href="https://polar-brook-39410.herokuapp.com/?fbclid=IwAR335aD-nWzY7ArmomXoIKfqp1p29uyX5f2b3rd0_leiVDfSBqi-WHxSy64">Open Webpage</a></span></div>
                 <p class="hidden">Open Webpage</p>
                 <div class="top__left corners"></div>
                 <div class="top__right corners"></div>
@@ -252,27 +283,30 @@
                 <div class="bottom__right corners"></div>
             </div>
             <div class="project__link-git">
-                <div class="content__link"><span class="spanOne">View Source Code</span><span class="spanTwo">View Source Code</span></div>
+                <div class="content__link"><span class="spanOne"><a class="button__link__git" href="https://github.com/IvanNajdovski/Weather_Forecast">View Source Code</a></span><span class="spanTwo"><a class="button__link__git"
+                        href="https://github.com/IvanNajdovski/Weather_Forecast">View Source Code</a></span>
+                </div>
                 <p class="hidden">View Source Code</p>
                 <div class="top__left corners"></div>
                 <div class="top__right corners"></div>
                 <div class="bottom__left corners"></div>
-                <div class="bottom__right corners"></div></div>
+                <div class="bottom__right corners"></div>
+            </div>
         </div>
         <div class="projects__content__photos">
             <div class="projects__content__photos__desktop active">
                 <img src="img/project__1/desktop.jpg" alt="">
             </div>
             <div class="projects__content__photos-wrapper">
-            <div class="projects__content__photos__mobile active">
-                <img class="mobile-img" src="img/project__1/mobile.jpg" alt="">
-            </div>
+                <div class="projects__content__photos__mobile active">
+                    <img class="mobile-img" src="img/project__1/mobile.jpg" alt="">
+                </div>
             </div>
         </div>
     </div>
-
 </div>
 <section class="form">
+    <a href="" id="contact"></a>
     <div class="projects__box">
         <h1 class="projects__box__header">Contact Me<span class="header__span">Contact Me</span></h1>
     </div>
@@ -281,19 +315,18 @@
             <input class="input__text" type="text" id="text" name="name" placeholder="1">
             <label class="form__box__form__label input__text" for="text">Your Name</label>
 
-            <input class="input__email" type="email" id="email"  name ="_replyto" placeholder="1">
+            <input class="input__email" type="email" id="email" name="_replyto" placeholder="1">
             <label class="form__box__form__label input__email" for="email">Your Email</label>
 
 
             <input class="input__phone" type="text" id="phone" name="_Phone Number" placeholder="1">
             <label class="form__box__form__label input__phone" for="phone">Phone Num</label>
 
-            <textarea class="textarea" rows="5" id="area" placeholder="1" name="_Message" ></textarea>
+            <textarea class="textarea" rows="5" id="area" placeholder="1" name="_Message"></textarea>
             <label class="input__textarea" id="label" for="area">Message</label>
 
-            <input class="input__submit" type="submit" id="submit"  placeholder="1">
+            <input class="input__submit" type="submit" id="submit" placeholder="1">
             <label class="form__box__form__label input__submit-label" for="submit">Submit <span class="input__span">Submit</span></label>
-
         </form>
     </div>
     <div class="form__animation__cover"></div>
@@ -302,11 +335,34 @@
     <div class="form__animation__left" style="z-index: 1; background-color:rgb(16,16,16); transition-delay: .6s"></div>
 
 
-        <div class="form__animation__right" style="z-index: 3; background-color:rgb(30,30,30);transition-delay: .2s"></div>
-        <div class="form__animation__right" style="z-index: 2;background-color:rgb(22,22,22);transition-delay: .4s"></div>
-        <div class="form__animation__right" style="z-index: 1;background-color:rgb(16,16,16);transition-delay: .6s"></div>
+    <div class="form__animation__right" style="z-index: 3; background-color:rgb(30,30,30);transition-delay: .2s"></div>
+    <div class="form__animation__right" style="z-index: 2;background-color:rgb(22,22,22);transition-delay: .4s"></div>
+    <div class="form__animation__right" style="z-index: 1;background-color:rgb(16,16,16);transition-delay: .6s"></div>
+    <h3 class="form__header">View This Page Code</h3>
+    <div class="form__button__box">
+
+        <div class="project__link-git">
+
+                <div class="content__link"><span class="spanOne"><a href="https://github.com/IvanNajdovski/Portfolio-Page">View Source Code</a></span><span class="spanTwo"><a href="https://github.com/IvanNajdovski/Portfolio-Page">View Source Code</a></span>
+
+                </div>
+
+                <p class="hidden">View Source Code</p>
+                <div class="top__left corners"></div>
+                <div class="top__right corners"></div>
+                <div class="bottom__left corners"></div>
+                <div class="bottom__right corners"></div>
+
+        </div>
+
+    </div>
+    </div>
 
 </section>
+<footer class="footer">
+    <h1>Ivan Najdovski 2018</h1>
+    <h1>Web-developer </h1>
+</footer>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="js/index.js"></script>
 </body>

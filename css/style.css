@@ -10,6 +10,18 @@ html {
   box-sizing: border-box;
   font-size: 62.4%;
   cursor: none; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 57%; } }
+  @media only screen and (max-width: 50em) {
+    html {
+      font-size: 54%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 25em) {
+    html {
+      font-size: 45%; } }
 
 body {
   overflow: hidden;
@@ -41,10 +53,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: white;
   border-radius: 50%;
   transform: translate(15px 15px);
-  z-index: 5500;
+  z-index: 15500;
   transition: top .15s, left .15s;
   overflow: hidden;
   mix-blend-mode: difference;
@@ -62,7 +74,7 @@ body {
   top: 0;
   left: 0;
   mix-blend-mode: difference;
-  z-index: 5551; }
+  z-index: 15551; }
   .cursor-small.hidden {
     visibility: hidden;
     opacity: 0;
@@ -116,14 +128,14 @@ body {
     animation-iteration-count: 1;
     animation-delay: 4s; }
   .logo__stroke {
-    stroke: #dadada;
+    stroke: #80beff;
     stroke-dasharray: 600, 600;
     stroke-dashoffset: 600;
     animation: strokeAnim 9s 1s ease-in-out;
     animation-iteration-count: 1;
     animation-delay: 4s; }
   .logo__strokeTwo {
-    stroke: #dadada;
+    stroke: #80beff;
     stroke-dasharray: 1050, 1050;
     stroke-dashoffset: 1050;
     animation: strokeAnimTwo 9s 1s ease-in-out;
@@ -131,7 +143,7 @@ body {
     animation-delay: 4s; }
   .logo__fill {
     z-index: 100000;
-    stroke: #dadada;
+    stroke: #80beff;
     stroke-dasharray: 290, 290;
     stroke-dashoffset: 290;
     animation: fillAnim 9s 1s;
@@ -140,7 +152,7 @@ body {
     animation-delay: 4s; }
   .logo__fillTwo {
     z-index: 100000;
-    stroke: #dadada;
+    stroke: #80beff;
     stroke-dasharray: 650, 650;
     stroke-dashoffset: 650;
     animation: fillAnimTwo 9s 1s;
@@ -299,6 +311,7 @@ body {
     justify-content: center;
     align-items: center; }
     .nav__box-content {
+      padding: 2rem 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -315,7 +328,10 @@ body {
             text-decoration: none;
             color: inherit; }
     .nav__box__menu {
-      margin-bottom: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       padding: 4rem;
       display: flex;
       justify-content: center;
@@ -378,6 +394,9 @@ body {
         font-size: 12rem;
         color: lightgray;
         transition: all .3s; }
+        @media only screen and (max-width: 37.5em) {
+          .top__box-header > div {
+            font-size: 8rem; } }
         .top__box-header > div:hover {
           transform: translateY(-30px);
           transition: all .3s; }
@@ -409,6 +428,17 @@ body {
         color: #80beff;
         font-family: "Kaushan Script";
         position: relative; }
+        @media only screen and (max-width: 37.5em) {
+          .top__navbar__list__item {
+            font-size: 2.5rem;
+            padding: 2rem 1rem; } }
+        @media only screen and (max-width: 25em) {
+          .top__navbar__list__item {
+            font-size: 1.8rem;
+            padding: 2rem 1rem; } }
+        .top__navbar__list__item > a {
+          text-decoration: none;
+          color: inherit; }
 
 .top {
   z-index: 1000;
@@ -418,6 +448,12 @@ body {
   padding-left: 20rem;
   justify-content: flex-start;
   align-items: center; }
+  @media only screen and (max-width: 1200px) {
+    .top {
+      padding-left: 10rem; } }
+  @media only screen and (max-width: 25em) {
+    .top {
+      padding-left: 6rem; } }
 
 .boxpanel {
   pointer-events: none;
@@ -432,6 +468,16 @@ body {
   clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
   visibility: hidden;
   opacity: 0; }
+  @media only screen and (max-width: 37.5em) {
+    .boxpanel {
+      left: 10%;
+      height: 50rem;
+      width: 40rem; } }
+  @media only screen and (max-width: 25em) {
+    .boxpanel {
+      left: 5%;
+      height: 40rem;
+      width: 30rem; } }
   .boxpanel.active {
     visibility: visible;
     opacity: 100;
@@ -451,6 +497,16 @@ body {
   clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
   visibility: hidden;
   opacity: 0; }
+  @media only screen and (max-width: 37.5em) {
+    .boxpanelPrime {
+      left: 10%;
+      height: 50rem;
+      width: 40rem; } }
+  @media only screen and (max-width: 25em) {
+    .boxpanelPrime {
+      left: 5%;
+      height: 40rem;
+      width: 30rem; } }
   .boxpanelPrime.active {
     visibility: visible;
     opacity: 100;
@@ -470,22 +526,49 @@ body {
   background-repeat: no-repeat;
   background-position: bottom left;
   width: 100%; }
-  .about__content {
-    margin-bottom: 10rem; }
-    .about__content__top {
-      padding: 8rem; }
-      .about__content__top__header {
-        font-family: "Lato";
-        text-align: center;
-        font-size: 1.8rem;
-        color: rgba(184, 184, 184, 0.72);
-        line-height: 4rem;
-        letter-spacing: .2rem; }
-    .about__content__bottom {
-      padding: 4rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly; }
+  @media only screen and (max-width: 37.5em) {
+    .about {
+      margin-top: 5rem;
+      padding-bottom: 10rem; } }
+  .about__content__top {
+    padding: 8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .about__content__top {
+        padding: 4rem; } }
+    @media only screen and (max-width: 25em) {
+      .about__content__top {
+        padding: 1.5rem; } }
+    .about__content__top__header {
+      padding-top: 4rem;
+      font-family: "Lato";
+      text-align: center;
+      font-size: 1.8rem;
+      color: rgba(184, 184, 184, 0.72);
+      line-height: 4rem;
+      letter-spacing: .2rem; }
+      @media only screen and (max-width: 37.5em) {
+        .about__content__top__header {
+          letter-spacing: .1rem;
+          line-height: 3rem;
+          font-size: 1.6rem; } }
+      @media only screen and (max-width: 25em) {
+        .about__content__top__header {
+          letter-spacing: .1rem;
+          line-height: 3rem;
+          font-size: 1.4em; } }
+  .about__content__bottom {
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    @media only screen and (max-width: 62.5em) {
+      .about__content__bottom {
+        flex-wrap: wrap; }
+        .about__content__bottom > * {
+          flex: 0 0 20%; } }
+    @media only screen and (max-width: 37.5em) {
+      .about__content__bottom {
+        flex-direction: column; } }
 
 .skill__img {
   position: relative;
@@ -496,6 +579,48 @@ body {
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media only screen and (max-width: 1500px) {
+    .skill__img {
+      width: 120px; } }
+  @media only screen and (max-width: 75em) {
+    .skill__img {
+      width: 100%; } }
+  @media only screen and (max-width: 62.5em) {
+    .skill__img.skill__down > img.active {
+      transform: translateY(130px); }
+    .skill__img.skill__down .under {
+      transform: translateY(130px); }
+      .skill__img.skill__down .under.active {
+        transform: translateY(0); } }
+  @media only screen and (max-width: 37.5em) {
+    .skill__img {
+      width: 150px; }
+      .skill__img.skill__right > img.active {
+        transform: translateX(100%); }
+      .skill__img.skill__right .under {
+        text-align: center;
+        color: #fff;
+        font-size: 4rem;
+        font-family: "Fredericka the Great";
+        filter: grayscale(70%) brightness(150%);
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transform: translateY(130px);
+        opacity: 0;
+        visibility: hidden; }
+        .skill__img.skill__right .under.active {
+          visibility: visible;
+          opacity: 100;
+          transform: translateY(0);
+          transition: all 0.5s cubic-bezier(0.52, -0.44, 0, 1.41);
+          transition-delay: .2s; }
+      .skill__img.skill__left > img.active {
+        transform: translateX(-100%); }
+      .skill__img.skill__left .under {
+        transform: translateY(130px); }
+        .skill__img.skill__left .under.active {
+          transform: translateY(0); } }
   .skill__img > img {
     width: 100%;
     height: auto;
@@ -504,10 +629,13 @@ body {
     transition: all 0.5s cubic-bezier(0.52, -0.44, 0.56, 1.41); }
     .skill__img > img.active {
       filter: grayscale(10%) brightness(150%);
-      transform: translateY(-170px);
+      transform: translateY(-130px);
       transition: all 0.3s cubic-bezier(0.52, -0.44, 0.56, 1.41); }
 
 .div__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -525,7 +653,7 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  transform: translateY(170px);
+  transform: translateY(130px);
   opacity: 0;
   visibility: hidden; }
   .under.active {
@@ -546,22 +674,42 @@ body {
   .projects__box {
     padding-top: 10rem;
     padding-left: 10rem; }
+    @media only screen and (max-width: 37.5em) {
+      .projects__box {
+        padding-top: 5rem;
+        padding-left: 5rem; } }
     .projects__box__header {
       position: relative;
       color: rgba(255, 255, 255, 0.3);
       font-family: "Fredericka the Great";
-      font-size: 8rem; }
+      font-size: 8rem;
+      padding-bottom: 2rem; }
+      @media only screen and (max-width: 37.5em) {
+        .projects__box__header {
+          font-size: 6rem; } }
+      @media only screen and (max-width: 25em) {
+        .projects__box__header {
+          font-size: 4rem; } }
       .projects__box__header.animate {
         transition: all .8s; }
         .projects__box__header.animate span {
           transition: all 1.2s; }
       .projects__box__header span {
+        white-space: nowrap;
         position: absolute;
         bottom: -1rem;
         transform: translateX(-100%);
         color: #80beff;
         font-family: "Fredericka the Great";
         font-size: 4rem; }
+        @media only screen and (max-width: 37.5em) {
+          .projects__box__header span {
+            font-size: 3rem;
+            transform: translate(-100%, -1rem); } }
+        @media only screen and (max-width: 25em) {
+          .projects__box__header span {
+            font-size: 2rem;
+            transform: translate(-100%, -2rem); } }
   .projects__content {
     padding: 10rem 2rem;
     display: flex; }
@@ -668,6 +816,9 @@ body {
   font-family: "Fredericka the Great";
   color: #fff;
   padding: 2rem 4rem; }
+  .project__link-page a {
+    color: inherit;
+    text-decoration: none; }
   .project__link-page:hover > .top__left {
     transform: translate(-0.5rem, -0.5rem) rotate(1080deg);
     transition: transform 2s; }
@@ -697,6 +848,9 @@ body {
   color: #fff;
   padding: 2rem 4rem;
   margin-left: 2rem; }
+  .project__link-git a {
+    color: inherit;
+    text-decoration: none; }
   .project__link-git:hover > .top__left {
     transform: translate(-0.5rem, -0.5rem) rotate(1080deg);
     transition: transform 2s; }
@@ -921,6 +1075,16 @@ body {
     top: 0;
     left: 0;
     pointer-events: none; }
+  .form__button__box {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem; }
+  .form__header {
+    text-align: center;
+    font-size: 3rem;
+    color: #80beff;
+    font-family: "Kaushan Script";
+    padding-bottom: 2rem; }
 
 .input__text {
   margin-left: 4rem; }
@@ -950,3 +1114,12 @@ body {
   width: 0;
   visibility: hidden;
   opacity: 0; }
+
+.footer {
+  padding: 4rem;
+  display: flex;
+  justify-content: space-evenly; }
+  .footer h1 {
+    color: lightgray;
+    font-size: 1.8rem;
+    font-family: "Fredericka the Great"; }
