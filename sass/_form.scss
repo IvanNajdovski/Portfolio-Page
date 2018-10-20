@@ -118,6 +118,9 @@
         margin-right: 16rem;
         color: rgba(255, 255, 255, 0.61);
         position: relative;
+        @media only screen and(max-width: $bp-medium){
+          margin-right: 0;
+        }
         &:hover {
           &:before {
             width: 100%;
@@ -143,6 +146,9 @@
           font-family: "Lato";
           color: $color-blue;
           transform: translate(8rem, -3rem);
+          @media only screen and(max-width: $bp-medium){
+            transform: translate(0, 0);
+          }
         }
 
       }
@@ -251,5 +257,11 @@
   width: 0;
   visibility: hidden;
   opacity: 0;
+}
+#submit{
+  &:not(:placeholder-shown) + label{
+    transform: translateX(-3rem) !important;
+  }
+
 }
 

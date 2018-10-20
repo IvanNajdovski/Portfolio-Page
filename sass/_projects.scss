@@ -12,6 +12,7 @@
   background-position: top left;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 10rem;
   &__box{
     padding-top: 10rem;
     padding-left: 10rem;
@@ -111,6 +112,7 @@
       @media only screen and(max-width: 1200px){
         transform: translateY(0);
       }
+      
       &-wrapper{
         width: 100%;
         height: 100%;
