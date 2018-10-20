@@ -494,12 +494,12 @@ body {
   opacity: 0; }
   @media only screen and (max-width: 37.5em) {
     .boxpanel {
-      left: 10%;
+      left: 20%;
       height: 50rem;
       width: 40rem; } }
   @media only screen and (max-width: 25em) {
     .boxpanel {
-      left: 5%;
+      left: 20%;
       height: 40rem;
       width: 30rem; } }
   .boxpanel.active {
@@ -523,12 +523,12 @@ body {
   opacity: 0; }
   @media only screen and (max-width: 37.5em) {
     .boxpanelPrime {
-      left: 10%;
+      left: 20%;
       height: 50rem;
       width: 40rem; } }
   @media only screen and (max-width: 25em) {
     .boxpanelPrime {
-      left: 5%;
+      left: 20%;
       height: 40rem;
       width: 30rem; } }
   .boxpanelPrime.active {

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6091afc8-5f46-454f-8a65-8d6c6fb45bb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/sass/_about.scss" afterPath="$PROJECT_DIR$/sass/_about.scss" />
-      <change beforePath="$PROJECT_DIR$/sass/_animation.scss" afterPath="$PROJECT_DIR$/sass/_animation.scss" />
-      <change beforePath="$PROJECT_DIR$/sass/_base.scss" afterPath="$PROJECT_DIR$/sass/_base.scss" />
-      <change beforePath="$PROJECT_DIR$/sass/_form.scss" afterPath="$PROJECT_DIR$/sass/_form.scss" />
-      <change beforePath="$PROJECT_DIR$/sass/_nav.scss" afterPath="$PROJECT_DIR$/sass/_nav.scss" />
-      <change beforePath="$PROJECT_DIR$/sass/_projects.scss" afterPath="$PROJECT_DIR$/sass/_projects.scss" />
+      <change beforePath="$PROJECT_DIR$/sass/_top.scss" afterPath="$PROJECT_DIR$/sass/_top.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,11 +99,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_top.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_top.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sass/_top.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3864">
-                  <caret line="184" column="1" lean-forward="false" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
+                <state relative-caret-position="91">
+                  <caret line="134" column="12" lean-forward="false" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -134,7 +129,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_nav.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_nav.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_nav.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="189">
@@ -172,7 +167,6 @@
         <option value="D:/New folder/sass/_base.scss" />
         <option value="$PROJECT_DIR$/sass/main.scss" />
         <option value="$PROJECT_DIR$/js/index.js" />
-        <option value="$PROJECT_DIR$/sass/_top.scss" />
         <option value="$PROJECT_DIR$/sass/_loading.scss" />
         <option value="$PROJECT_DIR$/sass/_components.scss" />
         <option value="$PROJECT_DIR$/sass/_footer.scss" />
@@ -183,6 +177,7 @@
         <option value="$PROJECT_DIR$/sass/_about.scss" />
         <option value="$PROJECT_DIR$/sass/_animation.scss" />
         <option value="$PROJECT_DIR$/sass/_nav.scss" />
+        <option value="$PROJECT_DIR$/sass/_top.scss" />
       </list>
     </option>
   </component>
@@ -350,12 +345,12 @@
       <workItem from="1540033418196" duration="7094000" />
       <workItem from="1540049311709" duration="2602000" />
       <workItem from="1540052611042" duration="1880000" />
-      <workItem from="1540054874325" duration="8022000" />
+      <workItem from="1540054874325" duration="8197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141205000" />
+    <option name="totallyTimeSpent" value="141380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -713,14 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_top.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3864">
-          <caret line="184" column="1" lean-forward="false" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_about.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -765,6 +752,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_top.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="134" column="12" lean-forward="false" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
           <folding />
         </state>
       </provider>
