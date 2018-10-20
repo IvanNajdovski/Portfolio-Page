@@ -12,6 +12,9 @@
       flex-direction: column;
 
       justify-content: center;
+      @media only screen and(max-width: $bp-medium){
+        padding: 5rem 0;
+      }
       &__label {
         transform: translate(-800px, -3rem);
         visibility: hidden;
@@ -41,6 +44,9 @@
         transform: translate(-800px);
 
         opacity: 0;
+        @media only screen and(max-width: $bp-medium){
+          width: 80%;
+        }
         &.active {
 
           opacity: 100;
@@ -79,6 +85,10 @@
         outline: none;
         transform: translate(-800px);
         opacity: 0;
+        @media only screen and(max-width: $bp-medium){
+          margin-left: 8rem;
+          width: 80%;
+        }
         &.active {
           opacity: 100;
           transform: translate(0);
@@ -195,17 +205,27 @@
 
 .input__text {
   margin-left: 4rem;
+  @media only screen and(max-width: $bp-medium){
+    margin-left:8rem;
+  }
 }
 
 .input__email {
   margin-left: 8rem;
+  @media only screen and(max-width: $bp-medium){
+    margin-left:8rem;
+  }
 }
 
 .input__phone {
   margin-left: 12rem;
+  @media only screen and(max-width: $bp-medium){
+    margin-left:8rem;
+  }
 }
 
 .input__textarea {
+
   margin-left: 26rem;
   transform: translate(-800px, 0);
   visibility: hidden;
@@ -213,6 +233,9 @@
   font-size: 2rem;
   font-family: "Fredericka the Great";
   color: $color-blue;
+  @media only screen and(max-width: $bp-medium){
+    margin-left:14rem;
+  }
   &.active {
     visibility: visible;
     opacity: 100;

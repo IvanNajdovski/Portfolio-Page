@@ -94,6 +94,9 @@ body {
   width: 140px;
   height: 140px;
   overflow: visible; }
+  @media only screen and (max-width: 25em) {
+    .logo {
+      display: none; } }
   .logo.active {
     top: 10rem;
     left: 5rem;
@@ -239,8 +242,8 @@ body {
     stroke-dashoffset: 0; } }
 
 .loading {
-  height: 8rem;
-  width: 8rem;
+  height: 80px;
+  width: 80px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -264,6 +267,8 @@ body {
     background-color: transparent; }
 
 .circle-fill {
+  width: 100%;
+  height: 100%;
   stroke-dasharray: 300, 300;
   stroke-dashoffset: 300; }
   .circle-fill.active {
@@ -279,15 +284,27 @@ body {
 .cursor-box {
   pointer-events: none; }
 
+.list__number {
+  padding: 2rem; }
+
 .line {
   width: 1px;
   height: 0;
   background-color: lightgray;
-  transition: height .5s; }
+  transition: height .5s ease-in; }
   .line.active {
     width: 1px;
     height: 10rem;
-    transition: height .5s; }
+    transition: height .5s ease-in; }
+  @media only screen and (max-width: 50em) {
+    .line {
+      height: 1px;
+      width: 0;
+      transition: width .5s ease-in; }
+      .line.active {
+        height: 1px;
+        width: 10rem;
+        transition: width .5s ease-in; } }
 
 .wrapper-center {
   margin-right: auto;
@@ -316,6 +333,9 @@ body {
       justify-content: center;
       align-items: center;
       margin-bottom: auto; }
+      @media only screen and (max-width: 37.5em) {
+        .nav__box-content {
+          padding: 2rem 1rem; } }
       .nav__box-content-list {
         display: flex;
         flex-direction: column;
@@ -529,7 +549,7 @@ body {
   @media only screen and (max-width: 37.5em) {
     .about {
       margin-top: 5rem;
-      padding-bottom: 10rem; } }
+      padding-bottom: 5rem; } }
   .about__content__top {
     padding: 8rem; }
     @media only screen and (max-width: 37.5em) {
@@ -669,14 +689,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
-  height: 100vh;
+  overflow: hidden;
   width: 100%; }
   .projects__box {
     padding-top: 10rem;
     padding-left: 10rem; }
     @media only screen and (max-width: 37.5em) {
       .projects__box {
-        padding-top: 5rem;
+        padding-top: 2rem;
         padding-left: 5rem; } }
     .projects__box__header {
       position: relative;
@@ -713,6 +733,11 @@ body {
   .projects__content {
     padding: 10rem 2rem;
     display: flex; }
+    @media only screen and (max-width: 50em) {
+      .projects__content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; } }
     .projects__content__list {
       flex: 0 0 10%; }
       .projects__content__list-list {
@@ -721,13 +746,23 @@ body {
         flex-direction: column;
         justify-content: start;
         align-items: center; }
+        @media only screen and (max-width: 50em) {
+          .projects__content__list-list {
+            flex-direction: row;
+            align-items: center; } }
         .projects__content__list-list > li {
           font-size: 3rem;
           color: #fff;
           font-family: "Kaushan Script"; }
-    .projects__content__text {
+    .projects__content__title {
       flex: 0 0 40%;
       padding: 2rem; }
+      @media only screen and (max-width: 1400px) {
+        .projects__content__title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; } }
     .projects__content__photos {
       height: 400px;
       perspective: 1300px;
@@ -736,6 +771,9 @@ body {
       flex: 0 0 50%;
       width: 100%;
       position: relative; }
+      @media only screen and (max-width: 1200px) {
+        .projects__content__photos {
+          transform: translateY(0); } }
       .projects__content__photos-wrapper {
         width: 100%;
         height: 100%;
@@ -848,6 +886,10 @@ body {
   color: #fff;
   padding: 2rem 4rem;
   margin-left: 2rem; }
+  @media only screen and (max-width: 1400px) {
+    .project__link-git {
+      margin-left: 0;
+      margin-top: 2rem; } }
   .project__link-git a {
     color: inherit;
     text-decoration: none; }
@@ -953,6 +995,9 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center; }
+      @media only screen and (max-width: 37.5em) {
+        .form__box__form {
+          padding: 5rem 0; } }
       .form__box__form__label {
         transform: translate(-800px, -3rem);
         visibility: hidden;
@@ -978,6 +1023,9 @@ body {
         font-size: 1.8rem;
         transform: translate(-800px);
         opacity: 0; }
+        @media only screen and (max-width: 37.5em) {
+          .form__box__form input {
+            width: 80%; } }
         .form__box__form input.active {
           opacity: 100;
           transform: translate(0);
@@ -1006,6 +1054,10 @@ body {
         outline: none;
         transform: translate(-800px);
         opacity: 0; }
+        @media only screen and (max-width: 37.5em) {
+          .form__box__form .textarea {
+            margin-left: 8rem;
+            width: 80%; } }
         .form__box__form .textarea.active {
           opacity: 100;
           transform: translate(0);
@@ -1088,12 +1140,21 @@ body {
 
 .input__text {
   margin-left: 4rem; }
+  @media only screen and (max-width: 37.5em) {
+    .input__text {
+      margin-left: 8rem; } }
 
 .input__email {
   margin-left: 8rem; }
+  @media only screen and (max-width: 37.5em) {
+    .input__email {
+      margin-left: 8rem; } }
 
 .input__phone {
   margin-left: 12rem; }
+  @media only screen and (max-width: 37.5em) {
+    .input__phone {
+      margin-left: 8rem; } }
 
 .input__textarea {
   margin-left: 26rem;
@@ -1103,6 +1164,9 @@ body {
   font-size: 2rem;
   font-family: "Fredericka the Great";
   color: #80beff; }
+  @media only screen and (max-width: 37.5em) {
+    .input__textarea {
+      margin-left: 14rem; } }
   .input__textarea.active {
     visibility: visible;
     opacity: 100;

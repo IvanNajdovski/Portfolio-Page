@@ -21,6 +21,9 @@
       justify-content: center;
       align-items: center;
       margin-bottom: auto;
+      @media only screen and(max-width: $bp-medium){
+        padding: 2rem 1rem;
+      }
       &-list{
         display: flex;
         flex-direction: column;

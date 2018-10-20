@@ -12,6 +12,9 @@
   width: $size;
   height: $size;
   overflow: visible;
+  @media only screen and (max-width: $bp-small){
+    display: none;
+  }
   &.active {
     top: 10rem;
     left: 5rem;

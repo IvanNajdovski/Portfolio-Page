@@ -8,17 +8,31 @@
 .cursor-box{
   pointer-events: none;
 }
-
+.list__number{
+  padding: 2rem;
+}
 .line{
   width: 1px;
   height: 0;
   background-color: lightgray;
-  transition: height .5s;
+  transition: height .5s ease-in;
   &.active{
     width: 1px;
     height: 10rem;
-    transition: height .5s;
+    transition: height .5s ease-in;
+
   }
+  @media only screen and(max-width: $bp-large-small){
+    height: 1px;
+    width: 0;
+    transition: width .5s ease-in;
+    &.active{
+      height: 1px;
+      width: 10rem;
+      transition: width .5s ease-in;
+    }
+  }
+
 }
 .wrapper-center{
   margin-right: auto;
