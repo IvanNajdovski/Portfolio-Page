@@ -81,14 +81,14 @@ $(document).ready(function () {
     });
 
     $(window).on("mousemove", function (e) {
-        if($(window).width() > 400) {
+        //if($(window).width() > 400) {
             var top = e.pageY;
             var left = e.pageX;
             $(".cursor-small").css("top", `${top}px`);
             $(".cursor-small").css("left", `${left}px`);
             $(".cursor").css("left", `${left - 15}px`);
             $(".cursor").css("top", `${top - 15}px`);
-        }
+      //  }
     })
     // $(window).on("scroll touchstart",function(){
     //     if($(window).width() <400){
