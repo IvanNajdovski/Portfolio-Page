@@ -260,7 +260,7 @@
 }
 #submit{
   &:not(:placeholder-shown) + label{
-    transform: translateX(-3rem) !important;
+    transform: translateX(-10rem) !important;
   }
 
 }

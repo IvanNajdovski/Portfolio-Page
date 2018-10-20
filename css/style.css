@@ -56,7 +56,7 @@ body {
   background-color: white;
   border-radius: 50%;
   transform: translate(15px 15px);
-  z-index: 15500;
+  z-index: 5500;
   transition: top .15s, left .15s;
   overflow: hidden;
   mix-blend-mode: difference;
@@ -74,7 +74,7 @@ body {
   top: 0;
   left: 0;
   mix-blend-mode: difference;
-  z-index: 15551; }
+  z-index: 5551; }
   .cursor-small.hidden {
     visibility: hidden;
     opacity: 0;
@@ -94,7 +94,7 @@ body {
   width: 140px;
   height: 140px;
   overflow: visible; }
-  @media only screen and (max-width: 25em) {
+  @media only screen and (max-width: 37.5em) {
     .logo {
       display: none; } }
   .logo.active {
@@ -319,6 +319,10 @@ body {
   padding: 4rem 1rem;
   z-index: 100000;
   display: block; }
+  @media only screen and (max-width: 37.5em) {
+    .nav {
+      right: unset;
+      left: 0; } }
   .nav.active {
     display: block; }
   .nav__box {
@@ -545,6 +549,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom left;
+  overflow: hidden;
   width: 100%; }
   @media only screen and (max-width: 37.5em) {
     .about {
@@ -690,8 +695,7 @@ body {
   background-repeat: no-repeat;
   background-position: top left;
   overflow: hidden;
-  width: 100%;
-  margin-bottom: 10rem; }
+  width: 100%; }
   .projects__box {
     padding-top: 10rem;
     padding-left: 10rem; }
@@ -985,6 +989,11 @@ body {
 .hidden {
   visibility: hidden; }
 
+@-moz-document url-prefix() {
+  @media only screen and (max-width: 37.5em) {
+    .projects {
+      padding-bottom: 20rem; } } }
+
 .form {
   overflow: hidden;
   width: 100%;
@@ -1187,7 +1196,7 @@ body {
   opacity: 0; }
 
 #submit:not(:placeholder-shown) + label {
-  transform: translateX(-3rem) !important; }
+  transform: translateX(-10rem) !important; }
 
 .footer {
   padding: 4rem;

@@ -6,6 +6,10 @@
   padding: 4rem 1rem;
   z-index: 100000;
   display: block;
+  @media only screen and(max-width: $bp-medium){
+    right: unset;
+    left: 0;
+  }
   &.active{
     display: block;
   }
