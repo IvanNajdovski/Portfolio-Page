@@ -114,6 +114,8 @@ $(document).ready(function () {
     })
     $(document).on("mouseup", function () {
         if (radius > 300) {
+            $("html, body").animate({ scrollTop: 0 });
+            $("body").css("overflow","visible");
             $(".nav").show();
 
 
