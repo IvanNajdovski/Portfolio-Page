@@ -351,6 +351,11 @@ $(document).ready(function () {
         }
     });
 
+    $(".chat__label").on("click", function(){
+        $(".chat__label").siblings().addClass("active");
+        //$(".chat__label").siblings("button").addClass("active");
+    });
+
     //----------------------SVG ICON MOVE---------------------
     // $(window).on("scroll", function(){
     //     var size = $(document).height() - $(window).height();
@@ -368,6 +373,9 @@ $(document).ready(function () {
     //     }
     //
     // })
+
+    // ---------------------CHAT ANIMATION{
+
 
 });
 

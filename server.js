@@ -18,7 +18,7 @@ var users = new Users();
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(publicPathTwo));
+app.use(express.static(publicPath));
 //----------- SOMEONE CONNECTED
 io.on("connection", (socket) => {
 

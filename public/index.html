@@ -10,11 +10,34 @@
 </head>
 <body class="">
 <div class="chat__box " >
-
+    <div class="chat" id="${random}">
+        <div class="close">
+            <button class="close-btn">X</button>
+        </div>
+        <div class="chat__sidebar">
+            <div class="status">
+                <p class="admin"></p>
+                <div class="status__img">
+                    <img src="img/online.png" alt="">
+                </div>
+            </div>
+            <p class="admin"></p>
+            <div class="users"></div>
+        </div>
+        <div class="chat__main">
+            <ol  class="chat__messages messages"></ol>
+            <div class="chat__footer">
+                <form action="" class="message-form">
+                    <input class="chat__text__input" name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
+                    <button class="button__text-chat">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="button">
     <form action="" class="form__button" id="chat_create">
-        <label for="#chat">Talk to me</label>
+        <label for="chat__label">Talk to me</label>
             <input id="chat__input" type="text" name="name" placeholder="Enter name" autocomplete="off" autofocus>
         <button class="button__join">Join</button>
     </form>
