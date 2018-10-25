@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 <a href="" id="home"></a>
@@ -110,7 +111,6 @@
         <div class="top__box-header">
             <div>W</div>
             <div>e</div>
-            <div>l</div>
             <div>l</div>
             <div>c</div>
             <div>o</div>
@@ -312,17 +312,17 @@
     </div>
     <div class="form__box wrapper-center">
         <form action="https://formspree.io/ivan_najdovski@hotmail.com" method="POST" class="form__box__form">
-            <input class="input__text" type="text" id="text" name="name" placeholder="1">
+            <input class="input__text" type="text" id="text" name="name" placeholder="1" autofocus autocomplete="off">
             <label class="form__box__form__label input__text" for="text">Your Name</label>
 
-            <input class="input__email" type="email" id="email" name="_replyto" placeholder="1">
+            <input class="input__email" type="email" id="email" name="_replyto" placeholder="1" autocomplete="off">
             <label class="form__box__form__label input__email" for="email">Your Email</label>
 
 
-            <input class="input__phone" type="text" id="phone" name="_Phone Number" placeholder="1">
+            <input class="input__phone" type="text" id="phone" name="_Phone Number" placeholder="1" autocomplete="off">
             <label class="form__box__form__label input__phone" for="phone">Phone Num</label>
 
-            <textarea class="textarea" rows="5" id="area" placeholder="1" name="_Message"></textarea>
+            <textarea class="textarea" rows="5" id="area" placeholder="1" name="_Message" autocomplete="off"></textarea>
             <label class="input__textarea" id="label" for="area">Message</label>
 
             <input class="input__submit" type="submit" id="submit">
@@ -359,11 +359,43 @@
     </div>
 
 </section>
+<div class="chat__box" >
+
+</div>
+<div class="button">
+    <form action="" class="form__button" id="chat_create">
+        <label for="chat__input">Talk to me</label>
+        <input id="chat__input" type="text" name="name" placeholder="Enter name" autocomplete="off" autofocus>
+        <button class="button__join">Join</button>
+    </form>
+</div>
+
 <footer class="footer">
-    <h1>Ivan Najdovski 2018</h1>
-    <h1>Web-developer </h1>
+    <h1>Ivan Najdovski <br/>Phone: 078-406-414</h1>
+    <h1>Web-Developer <br/>Email : Ivan_Najdovski@hotmail.com </h1>
 </footer>
+<script class="message-template" type="text/template">
+
+    <li class="message">
+        <div class="message__title">
+            <h4>{{from}}</h4>
+            <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+            <p>{{text}}</p>
+        </div>
+
+    </li>
+</script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="js/index.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/moment.js"></script>
+<script src="/js/libs/deparam.js"></script>
+<script src="/js/libs/mustache.js"></script>
+<script src="/js/socket.js"></script>
+
+
 </body>
 </html>

@@ -352,22 +352,22 @@ $(document).ready(function () {
     });
 
     //----------------------SVG ICON MOVE---------------------
-    $(window).on("scroll", function(){
-        var size = $(document).height() - $(window).height();
-        var scroll = $(window).scrollTop() ;
-        var percent = 100-(((size - scroll) / size) *100)
-        console.log(percent)
-        if(scroll > 300){
-            if(scroll === size){
-                $(".logo").css("top",`100%`)
-                $(".logo").css("left",`50%`)
-            }else {
-                $(".logo").css("top", `${percent}%`)
-                $(".logo").css("left", `3rem`)
-            }
-        }
-
-    })
+    // $(window).on("scroll", function(){
+    //     var size = $(document).height() - $(window).height();
+    //     var scroll = $(window).scrollTop() ;
+    //     var percent = 100-(((size - scroll) / size) *100)
+    //     console.log(percent)
+    //     if(scroll > 300){
+    //         if(scroll === size){
+    //             $(".logo").css("top",`100%`)
+    //             $(".logo").css("left",`50%`)
+    //         }else {
+    //             $(".logo").css("top", `${percent}%`)
+    //             $(".logo").css("left", `3rem`)
+    //         }
+    //     }
+    //
+    // })
 
 });
 
