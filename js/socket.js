@@ -187,6 +187,13 @@ socket.on("newMessage", function (message) {
     //$(".messages").append(html);
     scrollToBottom();
 });
+socket.on("closeAll", function(){
+    $(".chat").remove();
+    if($(".button").hasClass("active")) {
+        $(".button").removeClass("active");
+    }   $(".button__join").removeAttr("disabled")
+    window.history.pushState({}, document.title, "/");
+})
 // ---------------------- INPUT FUNCTIONALITY ------------------------------------
 $(document).on("click",".button__text-chat", function (e,event) {
     e.preventDefault();
@@ -206,7 +213,9 @@ $(document).on("click touch",".close", function (e,event) {
     $(".button").removeClass("active");
     $(".chat__label").siblings().removeClass("active");
    socket.emit("userDisconnected")
+    window.history.pushState({}, document.title, "/");
 });
+
 
 
 

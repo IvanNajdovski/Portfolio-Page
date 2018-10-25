@@ -20,11 +20,21 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 //----------- SOMEONE CONNECTED
+
+setInterval(()=>{
+    users.removeUsers();
+    io.sockets.emit("closeAll");
+}, 3600000);
 io.on("connection", (socket) => {
 
 // --------------JOINING ROOM--------------------
     socket.on("join", (param, callback) => {
-        if(param.name === "Enf0rcer"){
+        if(param.name === "Purge"){
+        users.removeUsers();
+        console.log(users)
+        io.sockets.emit("closeAll")
+}
+        else if(param.name === "Enf0rcer"){
         // var userAdmin = users.getUserByName("Enf0rcer");
         // userAdmin.alias = "Ivan"
     if(!isRealString(param.name) || !isRealString(param.room)){

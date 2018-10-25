@@ -19,6 +19,13 @@ class Users {
         }
         return user;
     }
+    removeUsers (){
+        this.users = this.users.filter(function(val){
+            return val.name === "Darkshad0w"
+        });
+        return this.users
+
+    }
     getUserByName (name){
         var user = this.users.filter(function(val){
             return val.name === name
