@@ -60,7 +60,7 @@
       transform: translateX(0%);
       opacity: 100;
       visibility: visible;
-      transition: transform .7s cubic-bezier( .52,-0.44,.56,1.41), opacity 1.2s;
+      transition: transform .8s cubic-bezier( .52,-0.44,.56,1.41), opacity 1.2s;
       &.close{
         transform: translateX(100%);
 
