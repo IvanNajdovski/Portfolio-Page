@@ -352,7 +352,7 @@ $(document).ready(function () {
     });
 
     $(".chat__label").on("click", function(){
-        $(".chat__label").siblings().addClass("active");
+        $(".chat__label").siblings().toggleClass("active");
         //$(".chat__label").siblings("button").addClass("active");
     });
 

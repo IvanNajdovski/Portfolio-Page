@@ -13,7 +13,7 @@ function scrollToBottom() {
     }
 }
 // --------------------- SOCKET CONNECTED--------------------------
-$(".button__join").on("click",function(e){
+$(".button__join").on("click touch",function(e){
     e.preventDefault();
     $(".button__join").attr("disabled", "disabled");
     $(".button").addClass("active");
@@ -200,7 +200,7 @@ $(document).on("click",".button__text-chat", function (e,event) {
         messageTextbox.val("")
     });
 });
-$(document).on("click",".close", function (e,event) {
+$(document).on("click touch",".close", function (e,event) {
    $(this).parent(".chat").remove();
     $(".button__join").removeAttr("disabled");
     $(".button").removeClass("active");

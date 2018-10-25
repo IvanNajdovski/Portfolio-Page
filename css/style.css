@@ -29,7 +29,7 @@ body {
   cursor: none; }
 
 .pic {
-  z-index: 10000;
+  z-index: 10000000;
   text-align: center;
   position: fixed;
   width: 100%;
@@ -251,7 +251,7 @@ body {
   top: 3rem;
   right: 5rem;
   transform: matrix(1, 0, 0, 1, 5, 5);
-  z-index: 10000; }
+  z-index: 10000000; }
   .loading p {
     font-family: Arial;
     color: #ffc36d;
@@ -1201,9 +1201,9 @@ body {
 .button {
   position: fixed;
   display: block;
-  bottom: 5rem;
-  right: 5rem;
-  z-index: 10000;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000000;
   transform: translateX(0px);
   opacity: 100;
   visibility: visible;
@@ -1235,6 +1235,9 @@ body {
     color: lightgray;
     font-family: "Fredericka the Great";
     padding-bottom: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .form__button label {
+        font-size: 2rem; } }
   .form__button input {
     display: none;
     border: none;
@@ -1260,13 +1263,17 @@ body {
   height: 35rem;
   position: fixed;
   bottom: 0;
-  right: 10rem;
+  right: 0;
   background-color: transparent;
-  z-index: 1000;
+  z-index: 1000000;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: row-reverse; }
+  @media only screen and (max-width: 25em) {
+    .chat__box {
+      height: 100%;
+      right: 0; } }
 
 .chat {
   overflow: hidden;
@@ -1275,6 +1282,13 @@ body {
   height: 35rem;
   margin: 0 2rem;
   background-color: transparent; }
+  @media only screen and (max-width: 25em) {
+    .chat {
+      background-color: black;
+      z-index: 1000000;
+      width: 100%;
+      height: 100%;
+      margin: 0 0; } }
 
 .close {
   position: absolute;
@@ -1341,6 +1355,13 @@ button:disabled {
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.51); }
+  @media only screen and (max-width: 25em) {
+    .chat {
+      background-color: black;
+      z-index: 100000000;
+      width: 100%;
+      height: 100%;
+      margin: 0 0; } }
 
 .chat__sidebar {
   width: 100%;
@@ -1420,17 +1441,14 @@ button:disabled {
 .message__title span {
   color: #999; }
 
-@media (max-width: 600px) {
-  * {
-    font-size: 1rem; }
-  .chat__sidebar {
-    display: none; }
-  .chat__footer {
-    flex-direction: column; }
-  .chat__footer form {
-    margin-bottom: 10px; }
-  .chat__footer button {
-    margin-right: 0px; } }
+@media only screen and (max-width: 25em) {
+  .users {
+    display: flex;
+    justify-content: center; }
+    .users > ol {
+      width: 50%; }
+      .users > ol > li {
+        width: 100%; } }
 
 .footer {
   padding: 4rem;
