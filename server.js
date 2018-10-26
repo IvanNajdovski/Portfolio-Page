@@ -90,17 +90,20 @@ io.on("connection", (socket) => {
     });
     socket.on("createMessage", (message, callback) => {
         var user = users.getUser(socket.id);
-        if(user.name === "Enf0rcer"){
-            if(user && isRealString(message.text)){
-                var rooms = users.getRooms();
+        var userName = user.name;
+        if(user) {
+            if (userName === "Enf0rcer") {
+                if (user && isRealString(message.text)) {
+                    var rooms = users.getRooms();
                     io.emit("newMessage", generateMessage(user.name, message.text, message.room));
+                }
+                callback();
+            } else {
+                if (user && isRealString(message.text)) {
+                    io.to(user.room).emit("newMessage", generateMessage(user.name, message.text, message.room));
+                }
+                callback();
             }
-            callback();
-        }else{
-            if(user && isRealString(message.text)){
-                io.to(user.room).emit("newMessage", generateMessage(user.name, message.text, message.room));
-            }
-            callback();
         }
     });
     socket.on("disconnect", () => {

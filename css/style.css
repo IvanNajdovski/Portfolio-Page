@@ -285,7 +285,7 @@ body {
   pointer-events: none; }
 
 .list__number {
-  padding: 2rem; }
+  padding: 1rem 2rem; }
 
 .line {
   width: 1px;
@@ -1265,11 +1265,12 @@ body {
   bottom: 0;
   right: 0;
   background-color: transparent;
-  z-index: 1000000;
+  z-index: 1000;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
-  flex-direction: row-reverse; }
+  flex-direction: row-reverse;
+  pointer-events: none; }
   @media only screen and (max-width: 25em) {
     .chat__box {
       height: 100%;

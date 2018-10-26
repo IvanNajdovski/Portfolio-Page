@@ -257,6 +257,15 @@ $(document).ready(function () {
             $(".button__link__git").each(function () {
                 $(this).attr("href", "https://github.com/IvanNajdovski/test-test");
             });
+        } else if (index === 6) {
+            $(".project__name").text("My Portfolio Page");
+            $(".project__details").text("My portfolio page where i connected my projects and provided great UX experience, implemented some cool effects and animation. The most challenging was building the Chat feature where you can talk to me directly via web-sockets, im using sockets-IO to emit events forward and back from the server and client... there meaby some bugs in error handling but ive tested it and it works just fine go on try it");
+            $(".button__link__page").each(function () {
+                $(this).attr("href", "https://quiet-beyond-43532.herokuapp.com");
+            });
+            $(".button__link__git").each(function () {
+                $(this).attr("href", "https://github.com/IvanNajdovski/Portfolio-Page");
+            });
         }
 
         setTimeout(function () {

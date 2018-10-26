@@ -1,27 +1,32 @@
-var socket = io();
+$(document).ready( function () {
 
-function scrollToBottom() {
-    var messages = $(".messages");
-    var newMessage = messages.children("li:last-child");
-    var clientHeight = messages.prop("clientHeight");
-    var scrollTop = messages.prop("scrollTop");
-    var scrollHight = messages.prop("scrollHeight");
-    var newMessageHeight = newMessage.innerHeight();
-    var lastMessageHeight = newMessage.prev().innerHeight()
-    if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHight) {
-        messages.scrollTop(scrollHight + newMessageHeight);
+
+
+    var socket = io();
+
+    function scrollToBottom() {
+        var messages = $(".messages");
+        var newMessage = messages.children("li:last-child");
+        var clientHeight = messages.prop("clientHeight");
+        var scrollTop = messages.prop("scrollTop");
+        var scrollHight = messages.prop("scrollHeight");
+        var newMessageHeight = newMessage.innerHeight();
+        var lastMessageHeight = newMessage.prev().innerHeight()
+        if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHight) {
+            messages.scrollTop(scrollHight + newMessageHeight);
+        }
     }
-}
+
 // --------------------- SOCKET CONNECTED--------------------------
-$(".button__join").on("click touch",function(e){
-    e.preventDefault();
-    $(".button__join").attr("disabled", "disabled");
-    $(".button").addClass("active");
-    var random = Math.floor(Math.random()*1000);
-    var nameTextbox = $("#chat__input")
-    if(nameTextbox.val() !== "Enf0rcer"){
-        history.pushState({}, null, `?name=${nameTextbox.val()}&room=${random}`);
-        var chat = $(`<div class="chat" id="${random}">
+    $(".button__join").on("click touch", function (e) {
+        e.preventDefault();
+        $(".button__join").attr("disabled", "disabled");
+        $(".button").addClass("active");
+        var random = Math.floor(Math.random() * 1000);
+        var nameTextbox = $("#chat__input")
+        if (nameTextbox.val() !== "Enf0rcer") {
+            history.pushState({}, null, `?name=${nameTextbox.val()}&room=${random}`);
+            var chat = $(`<div class="chat" id="${random}">
 <div class="animation__cover"></div>
         
 <div class="close">
@@ -48,34 +53,34 @@ $(".button__join").on("click touch",function(e){
     </div>`)
 
 
-        $(".chat__box").append(chat);
+            $(".chat__box").append(chat);
 
-        var param = $.deparam(window.location.search);
-        socket.emit("join", param, function (err) {
-            if (err) {
-                alert(err);
-                window.location.href = "/"
-            } else {
-                console.log("no err");
-            }
-        });
-    }else{
-        history.pushState({}, null, `?name=${nameTextbox.val()}&room=100`);
-        var param = $.deparam(window.location.search);
-        socket.emit("join", param, function (err) {
-            if (err) {
-                alert(err);
-                window.location.href = "/"
-            } else {
-                console.log("no err")
-                ;
-            }
-        });
-    }
+            var param = $.deparam(window.location.search);
+            socket.emit("join", param, function (err) {
+                if (err) {
+                    alert(err);
+                    window.location.href = "/"
+                } else {
+                    console.log("no err");
+                }
+            });
+        } else {
+            history.pushState({}, null, `?name=${nameTextbox.val()}&room=100`);
+            var param = $.deparam(window.location.search);
+            socket.emit("join", param, function (err) {
+                if (err) {
+                    alert(err);
+                    window.location.href = "/"
+                } else {
+                    console.log("no err")
+                    ;
+                }
+            });
+        }
     });
-socket.on("newUser", function(room){
-    socket.emit("joinRoom",{room:room})
-    var chat = $(`<div class="chat" id="${room.room}">
+    socket.on("newUser", function (room) {
+        socket.emit("joinRoom", {room: room})
+        var chat = $(`<div class="chat" id="${room.room}">
         <!--<div class="close">-->
         <!--<button class="close">X</button>-->
 <!--</div>-->
@@ -97,11 +102,11 @@ socket.on("newUser", function(room){
             </div>
         </div>
     </div>`)
-    $(".chat__box").append(chat);
-});
-socket.on("roomList", function(rooms){
-    for(let item of rooms.logedIn.users){
-        var chat = $(`<div class="chat" id="${item.room}">
+        $(".chat__box").append(chat);
+    });
+    socket.on("roomList", function (rooms) {
+        for (let item of rooms.logedIn.users) {
+            var chat = $(`<div class="chat" id="${item.room}">
         
         <!--<div class="close">-->
         <!--<button class="close">X</button>-->
@@ -125,98 +130,97 @@ socket.on("roomList", function(rooms){
             </div>
         </div>
     </div>`)
-        $(".chat__box").append(chat);
-    }
-});
-socket.on("adminOnline", function(){
-    $(".admin").text("Ivan is online");
-    $(".status__img").children("img").attr("src","img/online.png");
-    //  var adminLight = $(".adminLight");
-    //  adminLight.addClass("online");
-    // if(adminLight.hasClass("offline")){
-    //     adminLight.removeClass("offline");
-    // }
-});
-socket.on("adminOffline", function(){
-    $(".admin").text("Ivan is offline");
-    $(".status__img").children("img").attr("src","img/offline.png");
-});
-socket.on("removeUser", function(user){
-    $(`#${user.room}`).remove();
- });
-socket.on("updateUserList", function (users) {
-    var ol = $("<ol></ol>");
-    users.forEach(function (user) {
-        ol.append($("<li></li>").text(user));
-
+            $(".chat__box").append(chat);
+        }
     });
-    $(".users").html(ol);
-});
-socket.on("closeWindow", function(user){
-    console.log(user)
-   alert(`${user.user.name} has disconnected`);
-   $(`#${user.user.room}`).remove();
-});
+    socket.on("adminOnline", function () {
+        $(".admin").text("Ivan is online");
+        $(".status__img").children("img").attr("src", "img/online.png");
+        //  var adminLight = $(".adminLight");
+        //  adminLight.addClass("online");
+        // if(adminLight.hasClass("offline")){
+        //     adminLight.removeClass("offline");
+        // }
+    });
+    socket.on("adminOffline", function () {
+        $(".admin").text("Ivan is offline");
+        $(".status__img").children("img").attr("src", "img/offline.png");
+    });
+    socket.on("removeUser", function (user) {
+        $(`#${user.room}`).remove();
+    });
+    socket.on("updateUserList", function (users) {
+        var ol = $("<ol></ol>");
+        users.forEach(function (user) {
+            ol.append($("<li></li>").text(user));
+
+        });
+        $(".users").html(ol);
+    });
+    socket.on("closeWindow", function (user) {
+        console.log(user)
+        alert(`${user.user.name} has disconnected`);
+        $(`#${user.user.room}`).remove();
+    });
 // --------------------------USEFULL FOR NO RELOAD PAGE---------------------
 //history.pushState({}, null, "goHome");
 // ----------------SOCKET DISCONNECTED----------------------------------
-socket.on("disconnect", function () {
-    console.log("Disconnected form server");
-});
-// ----------------------------SOCKET RECIVED MESSAGE--------------------------------
-socket.on("newMessage", function (message) {
-    console.log(message);
-//------------------------------- MUSTACHE RENDERING ---------------------------------------------
-    var chat = $(`#${message.room}`).find(".messages");
-    var formatedTime = moment(message.createdAt).format("h:mm a");
-    var template = $(".message-template").html();
-    if(message.from === "Enf0rcer"){
-        var html = Mustache.render(template, {
-            text: message.text,
-            from: "Ivan",
-            createdAt: formatedTime
-        });
-    }else {
-        var html = Mustache.render(template, {
-            text: message.text,
-            from: message.from,
-            createdAt: formatedTime
-        });
-    }
-    chat.append(html)
-    //$(".messages").append(html);
-    scrollToBottom();
-});
-socket.on("closeAll", function(){
-    $(".chat").remove();
-    if($(".button").hasClass("active")) {
-        $(".button").removeClass("active");
-    }   $(".button__join").removeAttr("disabled")
-    window.history.pushState({}, document.title, "/");
-})
-// ---------------------- INPUT FUNCTIONALITY ------------------------------------
-$(document).on("click",".button__text-chat", function (e,event) {
-    e.preventDefault();
-    $(".button__join").attr("disabled", "disabled");
-    var room = $(this).closest("div.chat")
-    var messageTextbox = $(this).prev();
-    socket.emit("createMessage", {
-        text: messageTextbox.val(),
-        room: room.attr("id")
-    }, function () {
-        messageTextbox.val("")
+    socket.on("disconnect", function () {
+        console.log("Disconnected form server");
     });
+// ----------------------------SOCKET RECIVED MESSAGE--------------------------------
+    socket.on("newMessage", function (message) {
+        console.log(message);
+//------------------------------- MUSTACHE RENDERING ---------------------------------------------
+        var chat = $(`#${message.room}`).find(".messages");
+        var formatedTime = moment(message.createdAt).format("h:mm a");
+        var template = $(".message-template").html();
+        if (message.from === "Enf0rcer") {
+            var html = Mustache.render(template, {
+                text: message.text,
+                from: "Ivan",
+                createdAt: formatedTime
+            });
+        } else {
+            var html = Mustache.render(template, {
+                text: message.text,
+                from: message.from,
+                createdAt: formatedTime
+            });
+        }
+        chat.append(html)
+        //$(".messages").append(html);
+        scrollToBottom();
+    });
+    socket.on("closeAll", function () {
+        $(".chat").remove();
+        if ($(".button").hasClass("active")) {
+            $(".button").removeClass("active");
+        }
+        $(".button__join").removeAttr("disabled")
+        window.history.pushState({}, document.title, "/");
+    })
+// ---------------------- INPUT FUNCTIONALITY ------------------------------------
+    $(document).on("click", ".button__text-chat", function (e, event) {
+        e.preventDefault();
+        $(".button__join").attr("disabled", "disabled");
+        var room = $(this).closest("div.chat")
+        var messageTextbox = $(this).prev();
+        socket.emit("createMessage", {
+            text: messageTextbox.val(),
+            room: room.attr("id")
+        }, function () {
+            messageTextbox.val("")
+        });
+    });
+    $(document).on("click touch", ".close", function (e, event) {
+        $(this).parent(".chat").remove();
+        $(".button__join").removeAttr("disabled");
+        $(".button").removeClass("active");
+        $(".chat__label").siblings().removeClass("active");
+        socket.emit("userDisconnected")
+        window.history.pushState({}, document.title, "/");
+    });
+
+
 });
-$(document).on("click touch",".close", function (e,event) {
-   $(this).parent(".chat").remove();
-    $(".button__join").removeAttr("disabled");
-    $(".button").removeClass("active");
-    $(".chat__label").siblings().removeClass("active");
-   socket.emit("userDisconnected")
-    window.history.pushState({}, document.title, "/");
-});
-
-
-
-
-
