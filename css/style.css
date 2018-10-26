@@ -1269,13 +1269,15 @@ body {
   border-radius: 10px;
   overflow: hidden;
   display: flex;
-  flex-direction: row-reverse; }
+  flex-direction: row-reverse;
+  pointer-events: none; }
   @media only screen and (max-width: 25em) {
     .chat__box {
       height: 100%;
       right: 0; } }
 
 .chat {
+  pointer-events: auto;
   overflow: hidden;
   position: relative;
   width: 28rem;

@@ -259,7 +259,7 @@ $(document).ready(function () {
             });
         } else if (index === 6) {
             $(".project__name").text("My Portfolio Page");
-            $(".project__details").text("My portfolio page where i connected my projects and provided great UX experience, implemented some cool effects and animation. The most challenging was building the Chat feature where you can talk to me directly via web-sockets, im using sockets-IO to emit events forward and back from the server and client... there meaby some bugs in error handling but ive tested it and it works just fine go on try it");
+            $(".project__details").text("My portfolio page where i connected my projects and provided great UX experience, implemented some cool effects and animation. The most challenging was building the Chat feature where you can talk to me directly via web-sockets, im using sockets-IO to emit events forward and back from the server and client... there meaby some bugs in error handling but ive tested it and it works just fine go on try it. just couldnt import on remote server but on Heroku works nice");
             $(".button__link__page").each(function () {
                 $(this).attr("href", "https://quiet-beyond-43532.herokuapp.com");
             });
@@ -299,7 +299,7 @@ $(document).ready(function () {
         $(this).children("div").children("img").addClass("active");
         $(this).find(".under").addClass("active");
     });
-    $(".skill").on("mouseover", function () {
+    $(".skill").one("mouseover", function () {
         var percent = $(this).find(".under");
         if (percent.attr("aria-label")) {
             setTimeout(function () {
