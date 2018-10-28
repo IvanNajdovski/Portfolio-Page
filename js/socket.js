@@ -209,9 +209,14 @@ $(document).ready( function () {
         socket.emit("createMessage", {
             text: messageTextbox.val(),
             room: room.attr("id")
-        }, function () {
-            messageTextbox.val("")
-        });
+        }, function (err) {
+            if (err) {
+                alert(err);
+                window.location.href = "/"
+            } else {
+                messageTextbox.val("")
+            }
+        })
     });
     $(document).on("click touch", ".close", function (e, event) {
         $(this).parent(".chat").remove();

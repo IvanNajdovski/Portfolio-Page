@@ -89,6 +89,9 @@ io.on("connection", (socket) => {
         socket.join(room.room.room);
     });
     socket.on("createMessage", (message, callback) => {
+        if(users.getUser(socket.id) === undefined){
+            return callback("Your sesion has ended please log in again")
+}
         var user = users.getUser(socket.id);
         var userName = user.name;
         if(user) {
