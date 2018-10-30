@@ -27,6 +27,9 @@ body {
   overflow: hidden;
   background-color: #000;
   cursor: none; }
+  @media only screen and (max-width: 25em) {
+    body {
+      overflow: visible; } }
 
 .pic {
   z-index: 10000000;
@@ -37,6 +40,9 @@ body {
   top: 0;
   left: 0;
   background-color: #000; }
+  @media only screen and (max-width: 25em) {
+    .pic {
+      display: none; } }
 
 .blur {
   height: 100%; }
@@ -252,6 +258,9 @@ body {
   right: 5rem;
   transform: matrix(1, 0, 0, 1, 5, 5);
   z-index: 10000000; }
+  @media only screen and (max-width: 25em) {
+    .loading {
+      display: none; } }
   .loading p {
     font-family: Arial;
     color: #ffc36d;
@@ -772,7 +781,6 @@ body {
       height: 400px;
       perspective: 1300px;
       transform-origin: 50% 50%;
-      transform: translateY(-100px);
       flex: 0 0 50%;
       width: 100%;
       position: relative; }

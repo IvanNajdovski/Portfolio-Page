@@ -58,6 +58,9 @@ body{
   overflow: hidden;
   background-color: #000;
   cursor: none;
+  @media only screen and(max-width: $bp-small){
+    overflow: visible;
+  }
 }
 .pic {
   z-index: 10000000;
@@ -69,6 +72,9 @@ body{
   top: 0;
   left:0;
   background-color: #000;
+  @media only screen and(max-width: $bp-small){
+    display: none;
+  }
 }
 .blur {
   height: 100%;

@@ -19,6 +19,9 @@
   right: 5rem;
   transform: matrix(1,0,0,1,5,5);
   z-index: 10000000;
+  @media only screen and(max-width: $bp-small){
+    display: none;
+  }
   & p{
     font-family: Arial;
     color: #ffc36d;
