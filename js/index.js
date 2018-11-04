@@ -27,11 +27,12 @@ function isScrolledIntoViewLeft(a) {
     var docViewBottom = docViewTop + $(window).height();
     var elemTop = a.offset().top;
     var elemBottom = elemTop + a.outerHeight();
-    if (elemTop < docViewBottom - 400) {
+    if (elemTop < docViewBottom) {
         a.addClass("active");
         a.css("transform", `translateX(-${$(this).outerWidth() + 500}px)`)
     } else {
         a.removeClass("active");
+        a.css("transform", `translateX(0)`)
     }
 };
 
@@ -41,11 +42,12 @@ function isScrolledIntoViewRight(a) {
     var elemTop = a.offset().top;
     var elemBottom = elemTop + a.outerHeight();
 
-    if (elemTop < docViewBottom - 400) {
+    if (elemTop < docViewBottom) {
         a.addClass("active");
         a.css("transform", `translateX(${$(this).outerWidth()}px)`)
     } else {
         a.removeClass("active");
+        a.css("transform", `translateX(0)`)
     }
 };
 
@@ -315,7 +317,7 @@ $(document).ready(function () {
 
 
         $(".projects__content__photos").css("translation", "transform .5s");
-        $(".projects__content__photos").css("transform", ` translateY(-100px) rotateX(${offsetY}deg) rotateY(${offsetX}deg)`);
+        $(".projects__content__photos").css("transform", `rotateX(${offsetY}deg) rotateY(${offsetX}deg)`);
         $(".projects__content__photos-wrapper").css("transform", `rotateX(${offsetY}deg) rotateY(${offsetX}deg)`);
 
     });

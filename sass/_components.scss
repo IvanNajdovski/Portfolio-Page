@@ -28,11 +28,13 @@
     transition: width .5s ease-in;
     &.active{
       height: 1px;
-      width: 10rem;
+      width: 2rem;
       transition: width .5s ease-in;
     }
   }
-
+  @media only screen and(max-width: $bp-small){
+    display: none;
+  }
 }
 .wrapper-center{
   margin-right: auto;

@@ -312,8 +312,11 @@ body {
       transition: width .5s ease-in; }
       .line.active {
         height: 1px;
-        width: 10rem;
+        width: 2rem;
         transition: width .5s ease-in; } }
+  @media only screen and (max-width: 25em) {
+    .line {
+      display: none; } }
 
 .wrapper-center {
   margin-right: auto;
@@ -759,11 +762,13 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        align-items: center; }
+        align-items: center;
+        margin-bottom: 10rem; }
         @media only screen and (max-width: 50em) {
           .projects__content__list-list {
             flex-direction: row;
-            align-items: center; } }
+            align-items: center;
+            margin-bottom: 0; } }
         .projects__content__list-list > li {
           font-size: 3rem;
           color: #fff;
