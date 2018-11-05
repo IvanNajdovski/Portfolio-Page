@@ -4,9 +4,6 @@
     <list default="true" id="6091afc8-5f46-454f-8a65-8d6c6fb45bb8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change beforePath="$PROJECT_DIR$/sass/_components.scss" afterPath="$PROJECT_DIR$/sass/_components.scss" />
-      <change beforePath="$PROJECT_DIR$/sass/_projects.scss" afterPath="$PROJECT_DIR$/sass/_projects.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +19,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="535">
-                  <caret line="397" column="0" lean-forward="false" selection-start-line="397" selection-start-column="4" selection-end-line="397" selection-end-column="52" />
+                <state relative-caret-position="274">
+                  <caret line="23" column="95" lean-forward="true" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
                   <folding />
                 </state>
               </provider>
@@ -96,7 +93,7 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="326">
+                <state relative-caret-position="6699">
                   <caret line="319" column="58" lean-forward="false" selection-start-line="319" selection-start-column="58" selection-end-line="319" selection-end-column="58" />
                   <folding />
                 </state>
@@ -136,7 +133,7 @@
           <file leaf-file-name="_projects.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/_projects.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="307">
+                <state relative-caret-position="1659">
                   <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
                   <folding />
                 </state>
@@ -272,9 +269,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="942" />
-    <option name="y" value="19" />
-    <option name="width" value="775" />
+    <option name="x" value="984" />
+    <option name="y" value="8" />
+    <option name="width" value="926" />
     <option name="height" value="982" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -293,11 +290,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,12 +447,13 @@
       <workItem from="1540917934905" duration="2627000" />
       <workItem from="1540935541119" duration="213000" />
       <workItem from="1541077605259" duration="1000" />
-      <workItem from="1541374491418" duration="745000" />
+      <workItem from="1541374491418" duration="939000" />
+      <workItem from="1541424482904" duration="230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259330000" />
+    <option name="totallyTimeSpent" value="259754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -822,7 +820,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="6699">
           <caret line="319" column="58" lean-forward="false" selection-start-line="319" selection-start-column="58" selection-end-line="319" selection-end-column="58" />
           <folding />
         </state>
@@ -830,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_projects.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="1659">
           <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
           <folding />
         </state>
@@ -846,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="397" column="0" lean-forward="false" selection-start-line="397" selection-start-column="4" selection-end-line="397" selection-end-column="52" />
+        <state relative-caret-position="274">
+          <caret line="23" column="95" lean-forward="true" selection-start-line="23" selection-start-column="95" selection-end-line="23" selection-end-column="95" />
           <folding />
         </state>
       </provider>
