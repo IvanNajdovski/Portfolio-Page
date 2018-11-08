@@ -50,12 +50,13 @@
       }
     }
     &__bottom{
-        padding: 4rem 0;
+        padding: 4rem 6rem;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
       @media only screen and(max-width: $bp-large-medium){
         flex-wrap: wrap;
+        padding: 4rem 2rem;
         & >*{
           flex: 0 0 20%;
         }
